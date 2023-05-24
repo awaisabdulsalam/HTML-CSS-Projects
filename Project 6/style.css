@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3f51b5;
+    padding: 20px 50px;
+}
+.logo {
+    color: aliceblue;
+}
+ul {
+    display: flex;
+    list-style: none;
+}
+li {
+}
+li a {
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 18px;
+    font-weight: 500;
+    color: aliceblue;
+}
+.hero{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    height: 100vh;
+    background-image: url("./images/hero_image.png");
+}
+.hero_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 150px;
+    margin-right: 150px;
+    text-align: center;
+    line-height: 30px;
+}
+.hero_heading {
+    color: aliceblue;
+    font-size: 50px;
+    font-weight: 600;
+}
+.hero_tag {
+    color: aliceblue;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.hero_para {
+    color: aliceblue;
+    margin-top: 20px;
+}
+
+/*  */
+
+.music_scetion {
+    height: 100vh;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    background-color: #673ab7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
