@@ -4,11 +4,774 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
     <title>Document</title>
+    <style>
+      /* input:invalid {
+        border: 1px solid #F05252;
+        color: #F05252;
+      }
+      div {
+        border: 2px solid purple;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        width: 50%;
+      } */
+
+      /***************     Code Declaraion Order     *************/
+
+      .declaration {
+        /*  Positioning  */
+        position: relative;
+
+        /*  Box-Modal  */
+        display: block;
+        width: 100px;
+        height: 100px;
+        margin: 0;
+        padding: 0;
+
+        /*  Typography  */
+        font-size: large;
+        text-align: center;
+
+        /*  Visual  */
+        background-color: #f05252;
+        border: 1px solid gray;
+
+        /* Misc  */
+        opacity: 0.4;
+      }
+    </style>
   </head>
   <body>
     <h1>Hello</h1>
+    <p>This is para</p>
+    <blockquote>
+      Hi
+      <q title="This is quote"> This is Quote </q>
+    </blockquote>
+    <abbr title="World Wide Web">WWW </abbr>
+    <a href="mailto:theawais170@gmail.com">Contact</a>
+    <form action="">
+      <label for="name">Name</label>
+      <br />
+      <input type="text" id="name" required />
+      <br />
+      <label for="name">Email</label>
+      <br />
+      <input type="tel" id="name" />
+      <br />
+      <input type="number" min="2000" max="2023" />
+      <br />
+      <label for="telephone">Telephone</label>
+      <br />
+      <input type="tel" name="" id="telephone" inputmode="numeric" />
+      <br />
+      <input type="text" enterkeyhint="next" />
+      <input type="url" />
+      <button type="submit">Submit</button>
 
+      <div>
+        <p>Hi</p>
+      </div>
+    </form>
   </body>
+  <script>
+    // function testAvailability() {
+    //   let y = "I will return";
+    //   console.log(y);
+    //   return y;
+    // }
+    // let z = testAvailability();
+    // console.log("Outside", z);
+    // console.log("Not available" , y);
+
+    //
+    //    " let " is function scope
+    //    " var " is block scope
+
+    // function doingStuff() {
+    //   if(true) {
+    //     let x = "Local";
+    //   }
+    //   console.log(x);
+    // }
+    // console.log(doingStuff());
+
+    //
+
+    // function doingStuff() {
+    //   if(true) {
+    //     console.log(x);
+    //      x = "Local";
+    //   }
+    // }
+    // console.log(doingStuff());
+
+    //
+
+    //     function globalInsideBlock() {
+
+    // //    Since below " x " is not defined in variable JavaScript will consider it GLOBAL variable
+    //       x = "Hi";
+    //       console.log(x);
+    //     }
+    //     globalInsideBlock()
+    //     console.log(x + "Hlo");
+
+    //
+
+    //      *************    IIFE  ******************
+
+    // let name = "Awais";
+    //   let result = (
+    //  function(parameter){
+    //     let name = "Ali"
+    //     let result = "Awais"
+    //     console.log(name);
+    //     return parameter + " " + result;
+    //   }
+    // )("Oye")
+    // console.log(result)
+
+    //
+
+    //     **************    Recursion    ***************
+
+    // function recursion(num) {
+    //   console.log("Started at: ", num);
+    //   if(num > 0) {
+    //     recursion(num - 1);
+    //     console.log("After recur");
+    //   } else {
+    //     console.log("Finally Done");
+    //   }
+    //   console.log("Ended function: ", num);
+    // }
+    // recursion(5);
+
+    // function checkValue(val) {
+    //   console.log('Val is: ', val);
+
+    //   if(val > 0) {
+    //     return checkValue(val) * checkValue(val - 1);
+    //   }
+    //   else {
+    //     console.log("DONE");
+    //   }
+
+    // }
+    // checkValue(4);
+
+    //
+
+    //   ***************     Nested Functions     ****************
+
+    // function outer(outerNum) {
+    //   console.log("Outer");
+    //   inner(outerNum)
+    //   function  inner(innerNum) {
+    //     console.log(innerNum + 2);
+    //   }
+    // }
+    // outer(5)
+
+    // let number = 10;
+    // function count(param) {
+    //   console.log(param);
+    //   if(param < 1) {
+    //     return count(param - 1)
+    //   }
+    // }
+
+    //
+
+    // let anonymous = function(name) {
+    //   console.log("Hi,", name);
+    // }
+    // anonymous("Awais");
+
+    //
+
+    //    *****************     Callbacks     **************
+
+    // const willCall = function(){
+    //   console.log("I am callback");
+    // }
+    // function willCall(){
+    //   console.log("I am callback");
+    // }
+    // function useCallBack(callMe) {
+    //   callMe();
+    //   console.log("After call back");
+    // }
+    // useCallBack(willCall);
+
+    //
+
+    // let youGo = function() {
+    //   console.log("After some time");
+    // }
+    // setTimeout(youGo, 1000);
+    // setInterval(youGo, 1000);
+
+    //
+
+    // function projectOne(num) {
+    //   console.log(num);
+    //   if(num > 0){
+    //     projectOne(num - 1);
+    //   }
+    // }
+    // projectOne(9)
+
+    //
+
+    // let val = 10;
+    // function tester(val){
+    // val += 10;
+    // if(val < 100){
+    // return tester(val);
+    // }
+    // return val;
+    // }
+    // console.log(tester(val));
+
+    // function timeOut() {
+    //   setTimeout(()=> { console.log("Four");}, 1000)
+    //   setTimeout(()=> { console.log("Three");}, 2000)
+    //   setTimeout(()=> { console.log("One");}, 3000)
+    //   setTimeout(()=> { console.log("Two");}, 4000)
+    //   setTimeout(()=> { console.log("One");}, 5000)
+    // }
+    // timeOut()
+
+    //
+
+    //   *****************    Classes   *****************
+
+    // class Person {
+    //   constructor(firstName, lastName, age) {
+    //     this.firstName = firstName;
+    //     this.lastName = lastName;
+    //     this.age = age
+    //   }
+    //   greet() {
+    //     console.log("Hi,", this.firstName);
+    //     return this.firstName + " " + this.age + " " + "years old";
+    //   }
+    // }
+
+    // let friendOne = new Person("Ahmad", "Shehbaz", 20);
+    // let friendTwo = new Person("Awais", "Rehman");
+    // let friendThree = new Person("Saad", "Ali");
+
+    // console.log(friendOne);
+    // let wish = friendOne.greet()
+    // console.log(wish);
+    // console.log(friendTwo);
+    // console.log(friendThree);
+
+    //
+
+    // class Person {
+    //   constructor(firstName, lastName) {
+    //     this.firstName = firstName;
+    //     this.lastName = lastName;
+    //   }
+
+    //   get getFirstName() {
+    //     return this.firstName
+    //   }
+    //   set setFirstName(fName) {
+    //     return this.firstName = fName;
+    //   }
+    // }
+
+    // class Awais extends Person {
+    //   constructor(firstName, lastName, age){
+    //     super(firstName, lastName, getFirstName(), setFirstName());
+    //     this.age = age;
+    //   }
+    //   doCoding() {
+    //     console.log("Eat Sleep Code Repeat");
+    //   }
+    // }
+    // const me = new Awais("Awais", "Ali", 21);
+    // me.doCoding()
+    // console.log(me);
+    // me.setFirstName("Ali")
+
+    //
+
+    // class Animals {
+    //   constructor(name, sound) {
+    //     this.name = name;
+    //     this.sound = sound;
+    //   }
+    //   makeSound() {
+    //     console.log(this.sound);
+    //   }
+    // }
+
+    // class Cat extends Animals {
+    //   constructor(name, sound){
+    //     super(name, sound);
+    //   }
+    // }
+    // class Dog extends Animals {
+    //   constructor(name, sound) {
+    //     super(name, sound);
+    //   }
+    // }
+
+    // const cat = new Cat("Cat", "Mew Mew")
+    // console.log(cat);
+    // cat.makeSound()
+
+    // const dog = new Dog("Dog", "Waaoo Waaoo");
+    // console.log(dog);
+    // dog.makeSound()
+
+    //
+
+    // class Company {
+    //   constructor(firstName, lastName, years) {
+    //     this.firstName = firstName;
+    //     this.lastName = lastName;
+    //     this.years = years;
+    //   }
+    // }
+    // class Awais extends Company {
+    //   constructor(firstName, lastName, years){
+    //     super(firstName, lastName, years);
+    //   }
+    // }
+
+    // Awais.prototype.Details = this.firstName + this.lastName + "has been working for" + this.years + "years";
+
+    // class Saad extends Company {
+    //   constructor(firstName, lastName, years){
+    //     super(firstName, lastName, years);
+    //   }
+    // }
+
+    // const me = new Awais("Awais", "Ali", 5);
+    // const you = new Saad("Saad", "Hamid", 10);
+
+    // const people = [me, you];
+
+    // const toMap = people.map((item) => item.firstName+" "+item.lastName+" is working for "+item.years);
+    // console.log(toMap);
+
+    //
+
+    // class Menu {
+    //     constructor(item1, howMany1, item2, howMany2){
+    //       this.item1 = prompt("Enter item1 name");
+    //       this.howMany1 = +prompt("How many")
+    //       this.item2 = prompt("Enter item2 name");
+    //       this.howMany2 = +prompt("How many")
+    //     }
+    //     calculate() {
+    //       return this.howMany1 * 50 +  this.howMany2 * 20;
+    //     }
+    //     get getTotal() {
+    //         return this.calculate;
+    //     }
+    // }
+
+    // const user1 =  new Menu("Chai", 2, "Cake", 4);
+    // console.log(user1);
+
+    // console.log(user1.getTotal())
+
+    //
+
+    // class Person {
+    //   constructor(fName, lName) {
+    //     this.fName = fName;
+    //     this.lName = lName
+    //   }
+    // }
+    // Person.prototype = function (fName, lName) {
+    //   console.log(fName + lName);
+    // }
+
+    // const user = new Person("Awais", "Ali");
+    // console.log(user);
+
+    //
+
+    // let bigNr = 90071992547409920n;
+    // let bigNr2 = 90071992547409920n;
+    // console.log(bigNr + bigNr2);
+    // let intNr = 1;
+
+    //    We can not mix BigInt data type to Number data  type
+
+    // console.log(bigNr + intNr);
+
+    //
+
+    //   ************************       SYMBOL     ***************
+
+    // let str1 = "Awais";
+    // let str2 = "Awais";
+    // console.log(str1  === str2);
+
+    // let sym1 = Symbol(2)
+    // let sym2 = Symbol(2);
+    // console.log(sym1 === sym2);
+
+    //
+
+    //  We should always use NULL rather than UNDEFINED
+
+    // let notDefined = undefined;
+    // let lastName;
+    // console.log(notDefined === lastName);
+
+    // let isNull = null;
+    // console.log(isNull === lastName);
+
+    //
+
+    // let srt = "2";
+    // let num = 2;
+    // console.log(srt * num);
+
+    //
+
+    //   to convert Primitive Data Type to another PDT we have built in functions:
+    //   1. String()
+    //   2. Number()
+    //   3. Boolean()
+
+    // let strConvert = 10;
+    // strConvert = String(strConvert);
+    // console.log(strConvert, typeof strConvert);
+
+    // let numConvert = "";
+    // numConvert = Number(numConvert);
+    // console.log(numConvert, typeof numConvert, numConvert + 3);
+
+    // let boolConvert = null;
+    // boolConvert = Boolean(boolConvert);
+    // console.log(boolConvert, typeof boolConvert);
+
+    //
+
+    //   The type of NULL is OBJECT
+    // let str = null;
+    // console.log(typeof str);
+
+    //
+
+    // let num = 10;
+    // let str = "ghjk";
+    // console.log( num / str);
+
+    // let a = prompt("Enter frist value");
+    // let b = prompt("Enter second value");
+    // let add = a**2 +  b**2;
+    // console.log(add);
+
+    //
+
+    // let mile = 1;
+    // let km = 1.60934;
+
+    // console.log(`This disance of ${mile * 130} Km is ${km * 130}`);
+
+    //
+
+    // let cm = 2.45;
+    // let pound = 2.2046;
+    // let pro1 = +prompt("Enter Inches")
+    // let pro2 = +prompt("Enter Kgs")
+
+    // let height = pro1 * cm;
+    // let square = height ** 2;
+    // let calc = (pro2 * pound) / square;
+    // console.log(`Length is ${pro1 * cm}cm and weight is ${pro2 * pound}Kg`);
+    // console.log(calc);
+
+    // let a = "Hello"
+    // a = prompt("Enter value");
+    // console.log(a);
+
+    //
+    // let a = 5;
+    // let b = 70;
+    // let c = "5";
+    // b++;
+    // console.log(b);
+
+    //
+
+    // let firstNum = 5;
+    // let secondNum = 10;
+    // firstNum++;
+    // secondNum--;
+    // let total = ++firstNum + secondNum;
+    // console.log(total);
+    // let total2 = 500 + 100 / 5 + total--;
+    // console.log(total2)
+    // console.log(total);
+
+    //
+
+    // const arr = ["Hi, there", 6, true];
+    // arr[3] = "Tesla";
+    // console.log(arr[2]);
+    // console.log(arr.length);
+    // arr[-1] = "Hello";
+    // console.log(arr[-1]);
+    // console.log(arr.length);
+
+    //
+
+    // let arr = [1, 2, 3, 4];
+    // console.log(arr.length);
+    // console.log(arr[arr.length - 1]);
+    // arr[5] = 6;
+    // console.log(arr[4]);
+
+    //
+
+    // const array = ["Milk", "Bread", "Apple"];
+    // console.log(array.length);
+    // array[1] = "Banana";
+
+    // array.splice(1, 12, "Egg", "Pizza", "Mango");
+    // console.log(array);
+    //
+
+    // let arr1 = [1, 2, 3];
+    // let arr2 = [4, 5, 6];
+    // let arr3 = arr1.concat(arr2);
+    // console.log(arr1.splice(1, 0, 10));
+
+    //
+
+    // let arr = [1, 8, 10, 4, 9, 99, 767, 34];
+    //  This will log [ 2, 3, 4 ]
+    //                     2 se pehle shuru kr agly 3 print kr baqioun ko remove kr
+    // console.log(arr.splice(1, 3));
+
+    //    If indexOf could not find index in array it will return    " -1 "
+    // console.log(arr.indexOf(10));
+
+    //    By adding second argument it will tell that you should
+    //    start finding this particular index after this (second argument)
+
+    // console.log(arr.indexOf(4, 2));  //   ===>>   3
+    // console.log(arr.indexOf(4, 5));  //   ===>>   -1
+
+    // let arr = ["First", "Second", "Apple", "Banana", "Cat"];
+    // console.log(arr.sort());
+    // let ages = [2, 34, 6, 90, 12, 56];
+    // console.log(ages.sort((a, b) => a - b))
+
+    //
+
+    // let arr = ["Awais", "Ali", "Ansari"];
+    // console.log(arr.reverse());
+
+    //
+
+    // let shopping = ["Milk", "Bread", "Apples"];
+    // shopping.splice(1, 1, "Bananas", "Eggs")
+    // shopping.pop();
+    // shopping.sort()
+    // shopping.splice(1, 0, "Carrots", "Luttice");
+    // console.log(shopping);
+
+    // let shopping2 = ["Juice", "Pop"]
+    // console.log(shopping.indexOf("Milk"))
+    // console.log(shopping);
+
+    // let conc = shopping.concat(shopping2);
+    // console.log(conc);
+    // console.log(conc.lastIndexOf("Pop"));
+
+    //
+
+    // const myCar = {
+    //   name: "Rolls Royce",
+    //   age: 1,
+    //   modal: "1.75",
+    //   make: "Company",
+    //   fast: true,
+    //   design: "Awsesome",
+    //   color: "Black",
+    // }
+
+    // myCar["color"] = "White";
+    // myCar["forSale"] = "Yes";
+
+    // console.log(myCar["make"], myCar["modal"]);
+    // console.log(myCar["forSale"]);
+
+    //
+
+    // const people = {
+    //   friends: []
+    // }
+
+    // const friend1 = {
+    //   firstName: "Ahmad",
+    //   lastName: "Shehbaz",
+    //   id: 0
+    // }
+
+    // const friend2 = {
+    //   firstName: "Shahzaib",
+    //   lastName: "Ashraf",
+    //   id: 1
+    // }
+
+    // const friend3 = {
+    //   firstName: "Awais",
+    //   lastName: "Rehman",
+    //   id: 2
+    // }
+
+    // people.friends.splice(0, 0, friend1, friend2, friend3);
+    // people.friends.push(friend1, friend2, friend3);
+    // console.log(people.friends);
+
+    //
+
+    // const theList = ['Laurence', 'Svekis', true, 35, null, undefined,
+    //  { test: 'one', score: 55 }, ['one', 'two']];
+    //  theList.shift();
+    //  theList.unshift("FIRST");
+    //  theList.pop();
+    //  theList[3] = "hello world";
+    //  theList[2] = "MIDDLE";
+    //  theList.push("LAST");
+    //  console.log(theList);
+    //  theList.splice(2, 6, "MIDDLE", "Hello World", "LAST");
+    //  console.log(theList);
+
+    //
+
+    // const company = [
+    // ]
+
+    // const item1 = { name: "Mobile", model: "S8", cost: "40000", quantity: 10};
+    // const item2 = { name: "Tab", model: "POT20", cost: "56000", quantity: 15};
+    // const item3 = { name: "Laptop", model: "Core i3", cost: "30000", quantity: 1};
+    // company.splice(2, 0, item1, item2, item3);
+    // console.log(company[2].quantity);
+    // console.log(company.length)
+
+    // const arr = [1,3,5,6,8,9,15];
+    // arr.splice(1, 1, 4);
+    // console.log(arr);
+    // arr.sort();
+    // arr.length = 0;
+    // console.log(arr[0]);
+
+    // const myArr2 = [];
+    // myArr2[10] = 'test'
+    // console.log(myArr2);
+    // console.log(myArr2[2]);
+
+    //
+
+    //     *********************       LOOPs      *********************
+
+    // const array = ["Aw", "ai", "al", "li"];
+    // const notFound = true;
+
+    // while (notFound && array.length > 0) {
+    //   if (array[0] === "li") {
+    //     console.log("Found here");
+    //     notFound = false;
+    //   } else {
+    //     array.shift();
+    //   }
+    // }
+// console.log(array);
+
+//
+
+//         **********         Fabonacci       ************
+
+// let val1 = 0;
+// let val2 = 1;
+// let temp;
+
+// const fabArray = [];
+
+// while(fabArray.length < 25) {
+//   fabArray.push(val1)
+//   temp = val1 + val2;
+  // console.log(temp, "temp");
+  // val1 = val2;
+  // console.log(val1, "Val1");
+  // val2 = temp;
+  // console.log(val2, "Val2");
+// }
+// console.log(fabArray);
+
+//
+
+// let varil = Math.floor(Math.random() * 10) + 1;
+// console.log(varil);
+// let check = false;
+// let toNum = +prompt("Enter number in between 1 to 5");
+
+// while(toNum) {
+//   if(toNum === varil) {
+//     check = true;
+//     prompt("Congrats! You Right");
+//     break;
+//   } else {
+//    another = +prompt("Try again");
+//    toNum = another;
+//   }
+// }
+
+//
+
+// console.log("2" + 1 + "2");
+
+//
+
+// let number = 0;
+// do {
+//   console.log(number);
+//   number++;
+//   console.log(number);
+// } while(number >= 100);
+// console.log(number);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
 </html>
