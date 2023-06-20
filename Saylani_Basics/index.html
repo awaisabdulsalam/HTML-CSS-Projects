@@ -755,15 +755,41 @@
 
 //   *****************      Nested Loops     **************
 
-let arrOfArray = [];
+// let arrOfArray = [];
 
-for(let i = 0; i < 3; i++) {
-  arrOfArray.push([]);
-  for(let j = 0; j < 5; j++) {
-    arrOfArray[i].push(j);
-  }
+// for(let i = 0; i < 3; i++) {
+//   arrOfArray.push([]);
+//   for(let j = 0; j < 5; j++) {
+//     arrOfArray[i].push(j);
+//   }
+// }
+// console.log(arrOfArray);
+
+//
+
+for (let i = 0; i < 5; i++) {
+  //    Outer loop is running once
+  console.log(i);
+  let str = '';
+  for (let j = 0; j <= i; j++) {
+  //   Inner loop will complete its iteration then allow outer to run further 
+    // console.log(`i: ${i}, j: ${j}`);
+      str += "* "
+    }
+    console.log(str);
 }
-console.log(arrOfArray);
+
+
+console.log("1 " + "1 ");
+
+// let myTable = [];
+// let rows = 5;
+// let columns = 5;
+// let counter = 0;
+
+// for(let i = 0; i < 5; i++) {
+//   let tempArray = []
+// }
 
 
 
