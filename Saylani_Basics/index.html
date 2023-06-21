@@ -767,38 +767,119 @@
 
 //
 
-for (let i = 0; i < 5; i++) {
+// for (let i = 0; i < 5; i++) {
   //    Outer loop is running once
-  console.log(i);
-  let str = '';
-  for (let j = 0; j <= i; j++) {
+  // console.log(i);
+  // let str = '';
+  // for (let j = 0; j <= i; j++) {
   //   Inner loop will complete its iteration then allow outer to run further 
     // console.log(`i: ${i}, j: ${j}`);
-      str += "* "
-    }
-    console.log(str);
-}
-
-
-console.log("1 " + "1 ");
-
-// let myTable = [];
-// let rows = 5;
-// let columns = 5;
-// let counter = 0;
-
-// for(let i = 0; i < 5; i++) {
-//   let tempArray = []
+      // str += "* "
+    // }
+    // console.log(str);
 // }
 
 
+// for(let i = 1; i <= 10; i++) {
+//   for(let j = 1; j <= 10; j++){
+//     console.log(`${i} x ${j} = ${i * j}`);
+//   }
+//   console.log(`</br>`)
+// }
+
+// for(let i = 0; i <= 5; i++) {
+//   let star = "";
+//   for(let j = 0; j <= i; j++) {
+//     star += "* "
+//   }
+//   console.log(star)
+// }
+
+//
+
+// function isPrime(number) {
+//   // Prime numbers are greater than 1
+//   if (number <= 1) {
+//     return false;
+//   }
+
+//   // Check if number is divisible by any number other than 1 and itself
+//   for (let i = 2; i < number; i++) {
+//     if (number % i === 0) {
+//       return false; // Not a prime number
+//     }
+//   }
+
+//   return true; // Prime number
+// }
+
+// // Print prime numbers between 1 and 100
+// for (let i = 2; i <= 100; i++) {
+//   if (isPrime(i)) {
+//     console.log(i);
+//   }
+// }
 
 
+// const add = (A, B) => {
+//   const rows = A.length;
+//   const columns = A[0].length;
+//   const result = [];
+
+//   for(let i = 0; i < rows; i++) {
+//     const row = [];
+
+//     for(let j = 0; j < columns; j++) {
+//       row.push(A[0][0] + B[0][0]);
+//     }
+//     result.push(row);
+//   }
+//   return result;
+// }
+
+// const A = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+// ];
+
+// const B = [
+//   [7, 8],
+//   [9, 10],
+//   [11, 12],
+// ];
+
+// console.log(add(A, B))
 
 
+//
 
+// const myTable = [];
+// const rows = 5;
+// const columns = 5;
+// let counter = 0;
 
+// for(let i = 0; i < rows; i++) {
+//   const tempTable = [];
+//   for(let j = 0; j < columns; j++) {
+//     counter++;
+//     tempTable.push(counter)
+//   }
+//   myTable.push(tempTable)
+// }
 
+// console.log(myTable)
+
+//
+
+let names = ["Chantal", "John", "Maxime", "Bobbi", "Jair"];
+let last = ["Chal", "Oye", "Kam", "Kr", "Ja"];
+
+for (let i = 0; i < names.length; i ++){
+console.log(names[i]);
+for(let j = 0; j < last.length; j++) {
+  console.log(last[j]);
+}
+}
 
 
 
