@@ -1,0 +1,9 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+blockquote > q {
+    color: aqua;
+}
+div > p {
+    color: blueviolet;
+}
