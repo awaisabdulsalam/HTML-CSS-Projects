@@ -1,9 +1,12 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
-blockquote > q {
+h1 {
+    color: chartreuse;
+}
+.inherit {
     color: aqua;
 }
-div > p {
-    color: blueviolet;
+.inherit span {
+    color: inherit;
 }
