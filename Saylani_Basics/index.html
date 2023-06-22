@@ -880,13 +880,91 @@
 // }
 // }
 
+// let grid = [];
+// let cells = 64;
+// let counter = 0;
+
+// let rows = [];
+
+// for(let i = 0; i <= cells; i++) {
+//   cells += 1;
+//   if(counter % 8 === 0) {
+//     if(rows.length > 0) {
+//       grid.push(rows);
+//     }
+//     if(counter !== 0 && counter % 8 === 0) {
+//       rows = [];
+//     }
+//   }
+//   counter++;
+
+//   rows.push(counter);
+//   if(counter === 8) {
+//     grid.push(rows)
+//   }
+// }
+
+// grid.push(rows);
+
+// for (let r of grid) {
+//   console.log(r);
+// }
+
+// const arr = ["1", "2", "3"];
+// for(let elem of arr) {
+//   console.log(elem);
+// }
+
+// let items = { name: "Awais", work: "Programmer"};
+
+// for(let item in items) {
+//   console.log(item);
+//   console.log(items[item]);
+// }
+
+// let arrKeys = Object.keys(items);
+// console.log(arrKeys);
+// for(let elem of Object.keys(items)) {
+// for(let elem of Object.values(items)) {
+//   console.log(elem);
+// }
+
+// for(let i = 0; i < arrKeys.length; i++) {
+//   console.log(arrKeys[i]+": " + items[arrKeys[i]]);
+// }
 
 
+// let str = "";
+// let num = 3;
+// for(let i = 0; i < 10; i++) {
+//   if(i === num) {
+//     break;
+//   } 
+//   str += i;
+// }
+// console.log(str);
 
+let groups = [
+["Martin", "Daniel", "Keith"],
+["Margot", "Marina", "Ali"],
+["Helen", "Jonah", "Sambikos"],
+];
 
-
-
-
+for (let i = 0; i < groups.length; i++) {
+let matches = 0;
+for (let j = 0; j < groups[i].length; j++) {
+if(groups[i][j].startsWith("M")){
+matches++;
+} else {
+continue;
+}
+if (matches === 2){
+console.log("Found a group with two names starting with an M:");
+console.log(groups[i]);
+break;
+}
+}
+}
 
 
 
