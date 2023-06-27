@@ -69,12 +69,7 @@
       </div>
     </form> -->
 
-      <div>
-        <h1>Hello, <div class="inherit">
-          <span>World</span>
-        </div>
-        </h1>
-      </div>
+      <!-- <input type="text" onchange="go(this)"> -->
   </body>
   <script>
     // function testAvailability() {
@@ -995,6 +990,168 @@
 // console.log(el);
 // }
 // console.log(myArray)
+
+// let s = "Hello";
+// console.log(
+// s.concat(" there!")
+// .toUpperCase()
+// .replace("THERE", "you")
+// .concat(" You're amazing!")
+// )
+
+
+//
+
+// let uri = "https://www.example.com/submit?name=awais ali ansari";
+// let encode = encodeURI(uri);
+// let decode = decodeURI(uri);
+// console.log("Encode: ", encode);
+// console.log("Decode: ", decode);
+
+//
+
+//     **********     Will return without POINT   *************
+// let str = "22.34";
+// let str = "0x56778j";
+// let str = "9084gkjh75654"
+// let parse = parseInt(str);
+// console.log(parse, typeof parse);
+
+//    ************     Float will return one value after POINT   ***************
+
+// let val = "78.989";  //  78.989
+// let val = "0x599097tv";  //  0
+// let val = "hello"   //  NaN
+// console.log(parseFloat(val));
+
+// function go(e) {
+//   eval(e.value);
+//   console.log(eval(e.value));
+// }
+
+// let arr = ["grapefruit", 4, "hello", 5.6, true];
+// arr.forEach((element, index) => {
+// console.log("Printing stuff:", element, "on array position:", index);
+// })
+// console.log(arr);
+
+//
+
+// let arr = ["Str", 4, "Hello", false, new Date(), true];
+// function checkStr(elem, index) {
+//   return typeof elem === "string";
+// }
+// console.log(filt);
+// console.log(arr.every(checkStr));
+
+//
+
+
+//   ****************     CopyWithIn    *************
+
+// const arr = ["Oye", 80, 56, true, "Chal", 78, false, "yf", 12];
+// console.log(arr.length);
+
+//  1. Length will never CHANGE
+//  2. We must have to REPEAT any INDEX to make it work   
+
+// //   ( Kaha rakhne, Kia rakhne, Kisse pehle wale repeat krne hain ) 
+// console.log(arr.copyWithin(0, 3, 6));
+// console.log(arr.length);
+
+// arr = ["grapefruit", 4, "hello", 5.6, true];
+// console.log(arr.copyWithin(0, 3, 5))
+
+//
+
+// let ind = ["hi", 21, "oop", true];
+// console.log(ind.indexOf("uio"));
+
+// const prac = ["Laurence", "Mike", "Larry", "Kim", "Joanne", "Laurence", "Mike",
+// "Laurence", "Mike", "Laurence", "Mike"];
+
+// const pracFil = prac.filter((value, index) => {
+//   let ind = prac.indexOf(value);
+//   return ind === index;
+// })
+// console.log(pracFil);
+
+//
+
+// const arr =  [10, 20, 30, 40];
+// const mapArr = arr.map((elem) => elem * 2);
+// console.log(mapArr);
+
+//
+
+// let str =  "Hello World k";
+// let spl = str.split(" ");
+// let str =  "Hello,World,k";
+// let spl = str.split(",");
+// let str =  "Hello/World/k";
+// let spl = str.split("/");
+// console.log(spl);
+
+// let arr = [1, 2, 3, 4];
+// let jn = arr.join("");
+// console.log(jn[0]);
+
+//
+
+// let str = "I am here you are with me we enjoying alot";
+// let sch = str.search("re");
+// console.log(sch);
+
+// let pos1 = str.charAt(10);  //   y
+// let pos1 = str.charAt(100);  //   <empty string>
+// console.log(pos1);
+
+//
+
+// let str = "create string";
+// let subStr1 = str.slice(0, 3)  //  cre
+// let subStr1 =  str.slice(2);
+// console.log(subStr1);
+
+//
+
+// let caps = "HI HOW ARE YOU?";
+// let fixed_caps = caps.toLowerCase();
+// let first_capital = fixed_caps.charAt(0).toUpperCase().concat(fixed_caps.slice(1));
+// console.log(first_capital);
+
+//
+
+//    ************************************************************
+
+// let str = "thIs will be capiTalized for each word";
+
+// function gets(arg) {
+//   let toLow = arg.toLowerCase();
+//   let arr = [];
+//   let newArr = arg.split(" ");
+//   newArr.forEach((val) => {
+//     let first = val.slice(0, 1).toUpperCase();
+//     let insert = first.concat(val.slice(1).toLowerCase());
+//     arr.push(insert);
+//   })
+//   return arr.join(" ")
+// }
+// console.log(gets(str))
+
+//
+
+let str = "I Love JavaScript";
+let arr = ["a", "e", "i", "o", "u"];
+arr.forEach((let, index) => {
+  if(str.includes(let)){
+    str.replaceAll(index)
+    console.log(str);
+  }
+})
+
+
+
 
 
 
