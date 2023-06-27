@@ -1057,6 +1057,7 @@
 
 // //   ( Kaha rakhne, Kia rakhne, Kisse pehle wale repeat krne hain ) 
 // console.log(arr.copyWithin(0, 3, 6));
+// console.log(arr.copyWithin(0, 4, 8));
 // console.log(arr.length);
 
 // arr = ["grapefruit", 4, "hello", 5.6, true];
@@ -1141,18 +1142,79 @@
 
 //
 
-let str = "I Love JavaScript";
-let arr = ["a", "e", "i", "o", "u"];
-arr.forEach((let, index) => {
-  if(str.includes(let)){
-    str.replaceAll(index)
-    console.log(str);
-  }
-})
+// let str = "I Love JavaScript";
+// let arr = ["a", "e", "i", "o", "u"];
+// arr.forEach((let, index) => {
+//   if(str.includes(let)){
+//     str.replaceAll(index)
+//     console.log(str);
+//   }
+// })
 
 
+//
+
+//   *****************    Number Methods   ****************
+// let str = "str";
+// let num = 7;
+// let point = 3.14159;
+
+//    ******    isFinite()   ******
+
+// console.log(isFinite(str));  //  false
 
 
+//    ******    isInteger()   ******
+
+// console.log(Number.isInteger(str));  //  false
+// console.log(Number.isInteger(num));  //  true
+// console.log(Number.isInteger(point)); //  false
+
+//   *******    toFixed()    ******
+
+// let pi = point.toFixed(0);
+// console.log(pi);
+
+//   *******    toPrecision()  *****
+
+// let prec = point.toPrecision(5);
+// console.log(prec);
+
+//
+
+//      **********************     MATH Object   ****************
+
+// let min = Math.min(12, 34, 56, 78, 90);
+// console.log(min);
+// let max = Math.max(567, 23, 79, 800, 68, 999);
+// console.log(max);
+
+// let ran = Math.max(90, 45, 89, "Hi");
+// console.log(ran);    //    NaN
+
+// let result = Math.sqrt(90);
+// console.log(result);
+
+// let power = Math.pow(2, 3);
+// console.log(power);
+
+// let num = 3.1413;
+// let con =  num.toFixed(0);
+// console.log(Math.round(num) + " was " + num);
+// console.log(con + " was " + num);
+
+// console.log(Math.ceil(num));     //   if we only want to go up
+// console.log(Math.floor(num));    //   if we only want to go down
+
+// console.log(Math.floor(Math.random() * 10));
+
+//
+
+//     ******************      Date()     *****************
+
+console.log(new Date());
+let now = Date.now()
+console.log(now);
 
 
   </script>
