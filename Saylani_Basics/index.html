@@ -1347,21 +1347,25 @@
     //
 
     const output = document.querySelector(".output");
-    const divs = document.querySelectorAll("div");
+    const mainList = output.querySelector("ul");
+    mainList.id = "mainList";
+    const divs = output.querySelectorAll("div");
     let tagName = [];
 
-    divs.forEach((div) => {
-      tagName.push(div.tagName.toLocaleLowerCase())
-    })
-    const mainList = {
-      ul: output.querySelector("ul")
-    }
-    mainList.ul.id = "mainList"
-    console.log(mainList);
-    for (let i = 0; i < tagName.length; i++) {
-      console.log(tagName[i]);
-      tagName[i].id = `${i}`;
-      console.log(tagName[i].id);
+
+    // const mainList = {
+    //   ul: output.querySelector("ul")
+    // }
+    // mainList.ul.id = "mainList"
+    // console.log(mainList);
+    for (let i = 0; i < divs.length; i++) {
+      tagName.push(`id${i + 1}`);
+      divs[i].id = tagName[i];
+       if (i % 2 === 0) {
+    divs[i].style.color = 'red';
+  } else {
+    divs[i].style.color = 'blue';
+  }
     }
     console.log(tagName);
   </script>
