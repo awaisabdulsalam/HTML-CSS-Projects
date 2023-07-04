@@ -1393,12 +1393,13 @@
         for(let i = 0; i < names.length; i++) {
           let row = table.insertRow();
           row.setAttribute("data-row", i);
-          row.setAttribute("noclick", "getData(this)")
+          // row.setAttribute("onclick", "getData(this)")
           console.log(row);
 
           let cell = row.insertCell();
           cell.innerHTML = names[i];
           cell.setAttribute("data-name", names[i]);
+          cell.setAttribute("onclick", "getData(this)")
           console.log(cell);
 
           if(i === names.length - 1) {
@@ -1408,11 +1409,14 @@
         console.log(table);
         document.body.appendChild(table);
       }
-       function getData(data) {
-          console.log(data);
+
+      function getData(data) {
+        let getData = data.getAttribute("data-name");
+        alert(`Hi, ${getData}`)
         }
+
       build();
-      getData()
+      // getData()
 
       
   </script>
