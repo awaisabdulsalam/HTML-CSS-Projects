@@ -4,15 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .main>div {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Page 2</h1>
-    <button id="btn">Go back</button>
+    <div class="main">
+        <div class="red">Red</div>
+        <div class="blue">Blue</div>
+        <div class="green">Green</div>
+        <div class="orange">Orange</div>
+        <div class="orange">Pink</div>
+    </div>
+    <button onclick="toggle()">Click</button>
 </body>
 <script>
-    const btn = document.getElementById("btn");
-    btn.addEventListener("click", function(){
-        window.history.go(-1);
-    })
+    const main = document.querySelector(".main").children;
+    console.log( main);
+    function toggle() {
+        for(let i = 0; i < main.length; i++) {
+            main[i].style.backgroundColor = main[i].innerText;
+        }
+    }
 </script>
 </html>

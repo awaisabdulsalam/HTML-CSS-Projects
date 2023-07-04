@@ -33,58 +33,49 @@
       /****************      Misc      ******************/
       /* opacity: 0.4; */
       /* } */
+
+
+
+      /*  */
+
+
+
+      #blue {
+        height: 100px;
+        width: 100px;
+        background-color: blue;
+      }
+      .hide {
+        display: none;
+      }
+      .color {
+      height: 100px;
+      width: 100px;
+      }
+      .box {
+        height: 100px;
+        width: 100px;
+        background-color: aquamarine;
+      }
     </style>
   </head>
+  <!-- <div id="main">
+    <div id="first">
+      <ul id="second">
+        <li id="list">One</li>
+        <li>Two</li>
+        <li>Three</li>
+      </ul>
+    </div>
+    <div id="blue" class="color">blue</div>
+    <button onclick="toggleClass()">Toggle</button>
+    <div id="green" class="color">green</div>
+    <div class="color">yellow</div>
+    <div class="color">Purple</div>
+  </div> -->
   <body>
-    <!-- <h1>Hello</h1>
-    <p>This is para</p>
-    <blockquote>
-      Hi
-      <q title="This is quote"> This is Quote </q>
-    </blockquote>
-    <abbr title="World Wide Web">WWW </abbr>
-    <a href="mailto:theawais170@gmail.com">Contact</a> -->
-    <!-- <form action="">
-      <label for="name">Name</label>
-      <br />
-      <input type="text" id="name" required />
-      <br />
-      <label for="name">Email</label>
-      <br />
-      <input type="tel" id="name" />
-      <br />
-      <input type="number" min="2000" max="2023" />
-      <br />
-      <label for="telephone">Telephone</label>
-      <br />
-      <input type="tel" name="" id="telephone" inputmode="numeric" />
-      <br />
-      <input type="text" enterkeyhint="next" />
-      <input type="url" />
-      <button type="submit">Submit</button>
-
-      <div>
-        <p>Hi</p>
-      </div>
-    </form> -->
-
-    <!-- <input type="text" onchange="go(this)"> -->
-
-    <!-- <ul>
-        <li><a href="./prac1.html">Prac 1</a></li>
-        <li><a href="./prac2.html">Prac 2</a></li>
-      </ul> -->
-    <!-- <h1 class="output">Hello World</h1>
-    <div class="output">Test</div> -->
-    <div class="output">
-<h1>Hello</h1>
-<div>Test</div>
-<ul>
-<li id="one">One</li>
-<li class="red">Two</li>
-</ul>
-<div>Test</div>
-</div>
+    <div class="message"></div>
+    <div class="output"></div>
   </body>
   <script>
     // function testAvailability() {
@@ -1346,27 +1337,83 @@
 
     //
 
-    const output = document.querySelector(".output");
-    const mainList = output.querySelector("ul");
-    mainList.id = "mainList";
-    const divs = output.querySelectorAll("div");
-    let tagName = [];
-
+    // const output = document.querySelector(".output");
+    // const mainList = output.querySelector("ul");
+    // mainList.id = "mainList";
+    // const divs = output.querySelectorAll("div");
+    // let tagName = [];
 
     // const mainList = {
     //   ul: output.querySelector("ul")
     // }
     // mainList.ul.id = "mainList"
     // console.log(mainList);
-    for (let i = 0; i < divs.length; i++) {
-      tagName.push(`id${i + 1}`);
-      divs[i].id = tagName[i];
-       if (i % 2 === 0) {
-    divs[i].style.color = 'red';
-  } else {
-    divs[i].style.color = 'blue';
-  }
-    }
-    console.log(tagName);
+    //   for (let i = 0; i < divs.length; i++) {
+    //     tagName.push(`id${i + 1}`);
+    //     divs[i].id = tagName[i];
+    //      if (i % 2 === 0) {
+    //   divs[i].style.color = 'red';
+    // } else {
+    //   divs[i].style.color = 'blue';
+    // }
+    //   }
+    //   console.log(tagName);
+
+    //
+    // console.log(document.body.children.forest.children.tree2.children.shrubbery.children.treasure);
+
+    // console.log(document.body.childNodes[2]);
+    // console.log(document.body.children.forest.parentElement);
+    // console.log(document.body.children.forest.children.tree2.parentElement);
+
+    // console.log(document.body.children.main.children.first.children.second.children.list.nextElementSibling);
+    // document.body.children.main.children.blue.innerText="Red"
+    // document.body.children.main.children.blue.innerHTML="<h1>Red</h1>"
+
+      // console.log(document.getElementsByTagName("div").item(0))
+
+
+      //
+
+      //    ********    Add / Remove / Toggle classes   ***********
+
+      // function toggleClass() {
+      //   document.getElementById("blue").classList.toggle("hide");
+      //   let green = document.getElementById("green")
+      //   green.setAttribute("style", "background-color: cyan");
+      // }
+
+      //
+
+      
+      function build(){
+        const names = ["Awais", "Ali", "Ahmad", 'Saad'];
+        const table = document.createElement("table");
+
+        for(let i = 0; i < names.length; i++) {
+          let row = table.insertRow();
+          row.setAttribute("data-row", i);
+          row.setAttribute("noclick", "getData(this)")
+          console.log(row);
+
+          let cell = row.insertCell();
+          cell.innerHTML = names[i];
+          cell.setAttribute("data-name", names[i]);
+          console.log(cell);
+
+          if(i === names.length - 1) {
+            cell.classList.add = "box";
+          }
+        }
+        console.log(table);
+        document.body.appendChild(table);
+      }
+       function getData(data) {
+          console.log(data);
+        }
+      build();
+      getData()
+
+      
   </script>
 </html>
