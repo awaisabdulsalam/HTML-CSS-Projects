@@ -34,29 +34,19 @@
       /* opacity: 0.4; */
       /* } */
 
-
-
       /*  */
 
-
-
-      #blue {
-        height: 100px;
-        width: 100px;
-        background-color: blue;
-      }
-      .hide {
-        display: none;
-      }
-      .color {
-      height: 100px;
-      width: 100px;
-      }
-      .box {
-        height: 100px;
-        width: 100px;
-        background-color: aquamarine;
-      }
+      /* .active {
+display: block !important;
+}
+      .myText {
+display: none;
+}
+.title {
+font-size: 1.5em;
+background-color: #ddd;
+} */
+      
     </style>
   </head>
   <!-- <div id="main">
@@ -73,9 +63,35 @@
     <div class="color">yellow</div>
     <div class="color">Purple</div>
   </div> -->
+  <!-- <div class="message"></div>
+  <div class="output"></div>
+  <button>One</button>
+  <button>Two</button>
+  <button>Three</button> -->
+  <!-- <div>
+    <input type="text" id="addItem" />
+    <input type="button" id="addNew" value="Add to List" />
+  </div>
+  <div id="output">
+    <h1>Shopping List</h1>
+    <ol id="sList"></ol>
+  </div> -->
+
+  <!-- <div class="container">
+<div class="title">Title #1</div>
+<div class="myText">Just some text #1</div>
+<div class="title">Title #2</div>
+<div class="myText">Just some text #2</div>
+<div class="title">Title #3</div>
+<div class="myText">Just some text #3</div>
+</div> -->
   <body>
-    <div class="message"></div>
-    <div class="output"></div>
+    <div id="message">Complete JavaScript Course</div>
+<div>
+<input type="text" id="addFriend">
+<input type="button" id="addNew" value="Add Friend">
+</div>
+<table id="output"></table>
   </body>
   <script>
     // function testAvailability() {
@@ -453,9 +469,9 @@
     // strConvert = String(strConvert);
     // console.log(strConvert, typeof strConvert);
 
-    // let numConvert = "";
-    // numConvert = Number(numConvert);
-    // console.log(numConvert, typeof numConvert, numConvert + 3);
+    let numConvert = "3";
+    numConvert = Number(numConvert);
+    console.log(numConvert, typeof numConvert, numConvert + 3);
 
     // let boolConvert = null;
     // boolConvert = Boolean(boolConvert);
@@ -1370,54 +1386,164 @@
     // document.body.children.main.children.blue.innerText="Red"
     // document.body.children.main.children.blue.innerHTML="<h1>Red</h1>"
 
-      // console.log(document.getElementsByTagName("div").item(0))
+    // console.log(document.getElementsByTagName("div").item(0))
+
+    //
+
+    //    ********    Add / Remove / Toggle classes   ***********
+
+    // function toggleClass() {
+    //   document.getElementById("blue").classList.toggle("hide");
+    //   let green = document.getElementById("green")
+    //   green.setAttribute("style", "background-color: cyan");
+    // }
+
+    //
+
+    //     ********************     Project     ********************
+    // function build(){
+    //   const names = ["Awais", "Ali", "Ahmad", 'Saad'];
+    //   const table = document.createElement("table");
+
+    //   for(let i = 0; i < names.length; i++) {
+    //     let row = table.insertRow();
+    //     row.setAttribute("data-row", i);
+    //     // row.setAttribute("onclick", "getData(this)")
+    //     console.log(row);
+
+    //     let cell = row.insertCell();
+    //     cell.innerHTML = names[i];
+    //     cell.setAttribute("data-name", names[i]);
+    //     cell.setAttribute("onclick", "getData(this)")
+    //     console.log(cell);
+
+    //     if(i === names.length - 1) {
+    //       cell.classList.add = "box";
+    //     }
+    //   }
+    //   console.log(table);
+    //   document.body.appendChild(table);
+    // }
+
+    // function getData(data) {
+    //   let getData = data.getAttribute("data-name");
+    //   alert(`Hi, ${getData}`)
+    //   }
+
+    // build();
+    // getData()
+
+    //    ****************************************************************************
+
+    // window.onload = function() {
+    //   console.log("Hello");
+    // }
+
+    // const btns = document.querySelectorAll("button");
+    // for (let i = 0; i < btns.length; i++) {
+    //   console.log(btns[i]);
+    //   function output() {
+    //     console.log(btns[i].textContent);
+    //   }
+    //   btns[i].addEventListener("click", output);
+    // }
+    // console.log(btns);
+
+    //
+
+    // const btn = document.getElementById("addNew");
+    // const input = document.getElementById("addItem");
+    // const ol = document.getElementById("sList");
+
+    // btn.addEventListener("click", function() {
+    //   const li = document.createElement("li");
+    //   li.textContent = input.value;
+    //   ol.appendChild(li);
+    // })
+  
+  // ********************************************************************************
+
+// const title = document.querySelectorAll(".title");
+// const myText = document.querySelectorAll(".myText");
+// console.log(title);
+
+// for(let i = 0; i < title.length; i++) {
+//   title[i].addEventListener("click", function() {
+//     // const nextElem = title[i].nextElementSibling;
+//     const nextElem = this.nextElementSibling;
+//     nextElem.classList.toggle("active");
+    
+//   })
+// }
+
+//    **************************************************************************
+
+const addFriend = document.getElementById("addFriend"); // input
+const addNew = document.getElementById("addNew");  // button
+const output = document.getElementById("output");
+
+const myArray = ["Awais", "Ali", "Ahmad", "Saad"];
+
+addNew.addEventListener("click", buildContent)
+// addNew.addEventListener("click", function(){
+  // let value = addFriend.value;
+  // let row = output.insertRow();
+  // let cell = row.insertCell();
+  
+  // myArray.push(value);
+  // console.log(myArray);
+// })
+
+function buildContent() {
+  myArray.forEach((names, index) => {
+    let row = document.createElement("tr");
+    let cell = document.createElement("td");
+    let voteCell = document.createElement("td");
+    let number = document.createElement("td");
+
+addFriend.value = '';
+  let value = addFriend.value;
+  let row1 = output.insertRow();
+  let cell1 = row1.insertCell();
+  
+  myArray.push(value);
+  console.log(value);
+
+    number.textContent = index + 1;
+    row.appendChild(number);
+
+    cell.textContent = names;
+    row.appendChild(cell);
+
+    voteCell.textContent = "0";
+    let voteNum = parseInt(voteCell.textContent);
+    voteCell.textContent = voteNum;
+    row.appendChild(voteCell);
+
+    output.appendChild(row);
+
+    row.addEventListener("click", function() {
+      voteNum += 1;  
+      voteCell.textContent = voteNum;
+    })
+  })
+}
+
+buildContent()
+console.log(output);
 
 
-      //
 
-      //    ********    Add / Remove / Toggle classes   ***********
 
-      // function toggleClass() {
-      //   document.getElementById("blue").classList.toggle("hide");
-      //   let green = document.getElementById("green")
-      //   green.setAttribute("style", "background-color: cyan");
-      // }
 
-      //
 
-      
-      function build(){
-        const names = ["Awais", "Ali", "Ahmad", 'Saad'];
-        const table = document.createElement("table");
 
-        for(let i = 0; i < names.length; i++) {
-          let row = table.insertRow();
-          row.setAttribute("data-row", i);
-          // row.setAttribute("onclick", "getData(this)")
-          console.log(row);
 
-          let cell = row.insertCell();
-          cell.innerHTML = names[i];
-          cell.setAttribute("data-name", names[i]);
-          cell.setAttribute("onclick", "getData(this)")
-          console.log(cell);
 
-          if(i === names.length - 1) {
-            cell.classList.add = "box";
-          }
-        }
-        console.log(table);
-        document.body.appendChild(table);
-      }
 
-      function getData(data) {
-        let getData = data.getAttribute("data-name");
-        alert(`Hi, ${getData}`)
-        }
 
-      build();
-      // getData()
 
-      
+
+
   </script>
 </html>
