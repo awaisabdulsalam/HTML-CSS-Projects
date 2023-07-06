@@ -46,6 +46,26 @@ display: none;
 font-size: 1.5em;
 background-color: #ddd;
 } */
+
+.gameArea {
+text-align: center;
+font-size: 2em;
+}
+.box,
+.boxD {
+display: inline-block;
+padding: 5px;
+}
+.boxE {
+display: inline-block;
+width: 40px;
+border: 1px solid #ccc;
+border-radius: 5px;
+font-size: 1.5em;
+}
+.hide {
+  display: none;
+}
       
     </style>
   </head>
@@ -85,13 +105,19 @@ background-color: #ddd;
 <div class="title">Title #3</div>
 <div class="myText">Just some text #3</div>
 </div> -->
-  <body>
-    <div id="message">Complete JavaScript Course</div>
+<!-- <div id="message">Complete JavaScript Course</div>
 <div>
 <input type="text" id="addFriend">
 <input type="button" id="addNew" value="Add Friend">
 </div>
-<table id="output"></table>
+<table id="output"></table> -->
+  <body>
+    <div class="gameArea">
+<div class="score"> </div>
+<div class="puzzle"></div>
+<div class="letters"></div>
+<button>Start Game</button>
+</div>
   </body>
   <script>
     // function testAvailability() {
@@ -469,9 +495,9 @@ background-color: #ddd;
     // strConvert = String(strConvert);
     // console.log(strConvert, typeof strConvert);
 
-    let numConvert = "3";
-    numConvert = Number(numConvert);
-    console.log(numConvert, typeof numConvert, numConvert + 3);
+    // let numConvert = "3";
+    // numConvert = Number(numConvert);
+    // console.log(numConvert, typeof numConvert, numConvert + 3);
 
     // let boolConvert = null;
     // boolConvert = Boolean(boolConvert);
@@ -1478,61 +1504,134 @@ background-color: #ddd;
 
 //    **************************************************************************
 
-const addFriend = document.getElementById("addFriend"); // input
-const addNew = document.getElementById("addNew");  // button
-const output = document.getElementById("output");
+// const addFriend = document.getElementById("addFriend"); // input
+// const addNew = document.getElementById("addNew");  // button
+// const output = document.getElementById("output");
 
-const myArray = ["Awais", "Ali", "Ahmad", "Saad"];
+// const myArray = ["Awais", "Ali", "Ahmad", "Saad"];
 
-addNew.addEventListener("click", buildContent)
-// addNew.addEventListener("click", function(){
-  // let value = addFriend.value;
-  // let row = output.insertRow();
-  // let cell = row.insertCell();
+// addNew.addEventListener("click", buildContent)
+// // addNew.addEventListener("click", function(){
+//   // let value = addFriend.value;
+//   // let row = output.insertRow();
+//   // let cell = row.insertCell();
   
-  // myArray.push(value);
-  // console.log(myArray);
-// })
+//   // myArray.push(value);
+//   // console.log(myArray);
+// // })
 
-function buildContent() {
-  myArray.forEach((names, index) => {
-    let row = document.createElement("tr");
-    let cell = document.createElement("td");
-    let voteCell = document.createElement("td");
-    let number = document.createElement("td");
+// function buildContent() {
+//   myArray.forEach((names, index) => {
+//     let row = document.createElement("tr");
+//     let cell = document.createElement("td");
+//     let voteCell = document.createElement("td");
+//     let number = document.createElement("td");
 
-addFriend.value = '';
-  let value = addFriend.value;
-  let row1 = output.insertRow();
-  let cell1 = row1.insertCell();
+// addFriend.value = '';
+//   let value = addFriend.value;
+//   let row1 = output.insertRow();
+//   let cell1 = row1.insertCell();
   
-  myArray.push(value);
-  console.log(value);
+//   myArray.push(value);
+//   console.log(value);
 
-    number.textContent = index + 1;
-    row.appendChild(number);
+//     number.textContent = index + 1;
+//     row.appendChild(number);
 
-    cell.textContent = names;
-    row.appendChild(cell);
+//     cell.textContent = names;
+//     row.appendChild(cell);
 
-    voteCell.textContent = "0";
-    let voteNum = parseInt(voteCell.textContent);
-    voteCell.textContent = voteNum;
-    row.appendChild(voteCell);
+//     voteCell.textContent = "0";
+//     let voteNum = parseInt(voteCell.textContent);
+//     voteCell.textContent = voteNum;
+//     row.appendChild(voteCell);
 
-    output.appendChild(row);
+//     output.appendChild(row);
 
-    row.addEventListener("click", function() {
-      voteNum += 1;  
-      voteCell.textContent = voteNum;
-    })
-  })
+//     row.addEventListener("click", function() {
+//       voteNum += 1;  
+//       voteCell.textContent = voteNum;
+//     })
+//   })
+// }
+
+// buildContent()
+// console.log(output);
+
+//
+
+//     ********************************************************************************
+
+
+//        ********************     Project 2    *****************
+
+const score = document.querySelector(".score");
+const puzzle= document.querySelector(".puzzle");
+const letters = document.querySelector(".letters");
+const btn = document.querySelector("button");
+
+const myArray = ["Hide", "Up", "Left"];
+
+btn.addEventListener("click", startGame);
+
+function generateElements(type, parent, content, newClass) {
+  let newElement = document.createElement(type);
+  newElement.className = newClass;
+  parent.appendChild(newElement);
+  newElement.textContent = content;
+  return newElement;
 }
 
-buildContent()
-console.log(output);
+function builder() {
+  puzzle.innerHTML = "";
+  letters.innerHTML = "";
+
+  for(let i = 0; i < game.solution.length; i++) {
+     var letter = game.solution[i];
+    // console.log(createElement("span", lettersElement, letter, "letter"));
+    letters.appendChild(createElement("span", letter, "letter"))
+    puzzle.appendChild(createElement("span", "-", "letter"))
+  }
+}
+
+function startGame() {
+  if(myArray.length > 0) {
+    btn.style.display = "none";
+    game.init();
+    score.innerHTML = "Total: 0";
+    builder();
+
+    game.solution = myArray.shift();
+  }
+}
 
 
+const game = {
+  solution: "",
+  letters: [],
+  elements: [],
+  lettersLeft: 0,
+
+  init: function() {
+    let randomIndex = Math.floor(Math.random() * myArray.length);
+    // this.solution = this.myArray[randomIndex];
+    this.solution = myArray[randomIndex];
+
+    this.letters = this.solution.split("");
+
+    this.lettersLeft = this.letters.length;
+
+    puzzle.innerHTML = "";
+
+    for(let i = 0; i < this.letters.length; i++) {
+      let element = document.createElement("span");
+      puzzle.appendChild(element);
+      this.elements.push(element);
+    }
+  }
+}
+
+console.log(game.init());
 
 
 
