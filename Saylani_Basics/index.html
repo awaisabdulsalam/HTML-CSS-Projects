@@ -47,24 +47,10 @@ font-size: 1.5em;
 background-color: #ddd;
 } */
 
-.gameArea {
-text-align: center;
-font-size: 2em;
-}
-.box,
-.boxD {
-display: inline-block;
-padding: 5px;
-}
-.boxE {
-display: inline-block;
-width: 40px;
-border: 1px solid #ccc;
-border-radius: 5px;
-font-size: 1.5em;
-}
-.hide {
-  display: none;
+.orange {
+  width: 200px;
+  height: 200px;
+  background-color: orange;
 }
       
     </style>
@@ -111,13 +97,26 @@ font-size: 1.5em;
 <input type="button" id="addNew" value="Add Friend">
 </div>
 <table id="output"></table> -->
+<!-- <div id="output">Hello there</div>    
+<input type="text" value="JavaScript" id="val"> -->
+<!-- <div onclick="getVal('One')">UFG</div>
+<div onclick="getVal('Two')">HJKLKM</div>
+<div onclick="getVal('Three')">FGHJK</div> -->
+
+<!--  -->
+
+<!-- <div class="red">Red</div>
+<div class="green">green</div>
+<div class="blue">blue</div>
+<div class="orange" onmouseover="changeColor()">orange</div> 
+<div  id="divvy">purple</div> -->
   <body>
-    <div class="gameArea">
-<div class="score"> </div>
-<div class="puzzle"></div>
-<div class="letters"></div>
-<button>Start Game</button>
-</div>
+    <h2 id="welcome">Welcome</h2>
+    <form action="">
+      <input type="text" name="firstName"  placeholder="First Name">
+      <input type="text" name="lastName" placeholder="Last Name">
+      <button id="btn" onclick="getTarget()">Click Me</button>
+    </form>
   </body>
   <script>
     // function testAvailability() {
@@ -1565,83 +1564,210 @@ font-size: 1.5em;
 
 //        ********************     Project 2    *****************
 
-const score = document.querySelector(".score");
-const puzzle= document.querySelector(".puzzle");
-const letters = document.querySelector(".letters");
-const btn = document.querySelector("button");
+// const score = document.querySelector(".score");
+// const puzzle= document.querySelector(".puzzle");
+// const letters = document.querySelector(".letters");
+// const btn = document.querySelector("button");
 
-const myArray = ["Hide", "Up", "Left"];
+// const myArray = ["Hide", "Up", "Left"];
 
-btn.addEventListener("click", startGame);
+// btn.addEventListener("click", startGame);
 
-function generateElements(type, parent, content, newClass) {
-  let newElement = document.createElement(type);
-  newElement.className = newClass;
-  parent.appendChild(newElement);
-  newElement.textContent = content;
-  return newElement;
+// function generateElements(type, parent, content, newClass) {
+//   let newElement = document.createElement(type);
+//   newElement.className = newClass;
+//   parent.appendChild(newElement);
+//   newElement.textContent = content;
+//   return newElement;
+// }
+
+// function builder() {
+//   puzzle.innerHTML = "";
+//   letters.innerHTML = "";
+
+//   for(let i = 0; i < game.solution.length; i++) {
+//      var letter = game.solution[i];
+//     letters.appendChild(createElement("span", letter, "letter"))
+//     puzzle.appendChild(createElement("span", "-", "letter"))
+//   }
+// }
+
+// function startGame() {
+//   if(myArray.length > 0) {
+//     btn.style.display = "none";
+//     game.init();
+//     score.innerHTML = "Total: 0";
+//     builder();
+
+//     game.solution = myArray.shift();
+//   }
+// }
+
+
+// const game = {
+//   solution: "",
+//   letters: [],
+//   elements: [],
+//   lettersLeft: 0,
+
+//   init: function() {
+//     let randomIndex = Math.floor(Math.random() * myArray.length);
+//     // this.solution = this.myArray[randomIndex];
+//     this.solution = myArray[randomIndex];
+
+//     this.letters = this.solution.split("");
+
+//     this.lettersLeft = this.letters.length;
+
+//     puzzle.innerHTML = "";
+
+//     for(let i = 0; i < this.letters.length; i++) {
+//       let element = document.createElement("span");
+//       puzzle.appendChild(element);
+//       this.elements.push(element);
+//     }
+//   },
+
+//   checkLetter: function(letter) {
+//     let found = false;
+//     const letterElem = document.querySelector(".letter");
+
+//     for(let i = 0; i <br letters.length; i++) {
+//       if (this.letters[i] === letter) {
+
+//       } 
+//     }
+//   }
+// }
+
+// console.log(game.init());
+
+
+//      *********************************************************************************
+
+// document.getElementById("val").value = document.getElementById("output").innerHTML;
+
+// function getVal(val) {
+//   console.log(val);
+// }
+
+//
+
+// const btn = document.querySelector("button");
+// let value = true;
+// btn.addEventListener("click", function(){
+//   console.log("Msg");
+//   if(value) {
+//     document.body.style.backgroundColor = "#333";
+//     document.body.style.color = "#fff";
+//     value = false
+//   } else {
+//     document.body.style.backgroundColor = '#fff';
+//     document.body.style.color = "#333"
+//     value = true
+//   }
+// })
+
+// const divs = document.querySelectorAll("div");
+// divs.forEach((div) => {
+//   div.addEventListener("click", function(){
+//     document.body.style.backgroundColor = div.textContent;
+//   })
+// })
+
+//   ****************     Onload     ****************
+
+// window.onload = function(){
+//   console.log("Hello");
+// }
+
+// document.addEventListener("DOMContentLoaded", function(e) {
+//   console.log(e);
+// })
+
+//      ***********    Window vs Document objects    ************
+
+// function message(str, event) {
+//   console.log("String:", str);
+//   console.log("Event:", event);
+// }
+
+// window.onload = function(event){
+//   let msg = "Window Ready";
+//   message(msg, event);
+// }
+
+// //       Document will LOAD first ORDER does not MATTER
+
+// document.addEventListener("DOMContentLoaded", function(event) {
+//   let msg = "Document";
+//   message(msg, event);
+// })
+
+
+//
+
+///     ***************    Mouse Properties    ************
+
+// function changeColor() {
+//   document.querySelector(".orange").style.backgroundColor = "purple";
+// }
+
+// window.onload = function donenow() {
+// console.log("hi");
+// document.getElementById("divvy").addEventListener("mousedown",
+// function() { changeColor(this, "green"); });
+// document.getElementById("divvy").addEventListener("mouseup",
+// function() { changeColor(this, "yellow"); });
+// document.getElementById("divvy").addEventListener("dblclick",
+// function() { changeColor(this, "black"); });
+// document.getElementById("divvy").addEventListener("mouseout",
+// function() { changeColor(this, "blue"); });
+// }
+// console.log("hi2");
+// function changeColor(el, color) {
+// el.style.backgroundColor = color;
+// }
+
+
+//
+
+// window.onload = function mouseEvent() {
+//   const div = document.getElementById("divvy");
+//   div.addEventListener("mousedown", function() {
+//     changeColor(this, "green")
+//   });
+
+//   div.addEventListener("mouseover", function() {
+//     changeColor(this, "red");
+//   });
+
+//   div.addEventListener("mouseout", function() {
+//     changeColor(this, "yellow");
+//   })
+
+//   div.addEventListener("mouseenter", function() {
+//     changeColor(this, "green");
+//   })
+
+//   div.addEventListener("mouseleave", function() {
+//     changeColor(this, "blue");
+//   })
+// }
+
+// function changeColor(elem, color) {
+//   elem.style.backgroundColor = color;
+// }
+
+//
+
+function getTarget() {
+  let p = event.target.parentElement;
+  message(p.firstName.value + " " + p.lastName.value)
 }
-
-function builder() {
-  puzzle.innerHTML = "";
-  letters.innerHTML = "";
-
-  for(let i = 0; i < game.solution.length; i++) {
-     var letter = game.solution[i];
-    // console.log(createElement("span", lettersElement, letter, "letter"));
-    letters.appendChild(createElement("span", letter, "letter"))
-    puzzle.appendChild(createElement("span", "-", "letter"))
-  }
+function message(mess) {
+  document.getElementById("welcome").innerHTML = mess;
 }
-
-function startGame() {
-  if(myArray.length > 0) {
-    btn.style.display = "none";
-    game.init();
-    score.innerHTML = "Total: 0";
-    builder();
-
-    game.solution = myArray.shift();
-  }
-}
-
-
-const game = {
-  solution: "",
-  letters: [],
-  elements: [],
-  lettersLeft: 0,
-
-  init: function() {
-    let randomIndex = Math.floor(Math.random() * myArray.length);
-    // this.solution = this.myArray[randomIndex];
-    this.solution = myArray[randomIndex];
-
-    this.letters = this.solution.split("");
-
-    this.lettersLeft = this.letters.length;
-
-    puzzle.innerHTML = "";
-
-    for(let i = 0; i < this.letters.length; i++) {
-      let element = document.createElement("span");
-      puzzle.appendChild(element);
-      this.elements.push(element);
-    }
-  }
-}
-
-console.log(game.init());
-
-
-
-
-
-
-
-
-
-
 
 
   </script>
