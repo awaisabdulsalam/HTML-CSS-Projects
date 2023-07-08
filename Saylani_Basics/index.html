@@ -34,88 +34,19 @@
       /* opacity: 0.4; */
       /* } */
 
-      /*  */
-
-      /* .active {
-display: block !important;
-}
-      .myText {
-display: none;
-}
-.title {
-font-size: 1.5em;
-background-color: #ddd;
-} */
-
-.orange {
-  width: 200px;
-  height: 200px;
-  background-color: orange;
-}
-      
+      div {
+        border: 1px solid gray;
+        margin-left: 5px;
+      }
     </style>
   </head>
-  <!-- <div id="main">
-    <div id="first">
-      <ul id="second">
-        <li id="list">One</li>
-        <li>Two</li>
-        <li>Three</li>
-      </ul>
-    </div>
-    <div id="blue" class="color">blue</div>
-    <button onclick="toggleClass()">Toggle</button>
-    <div id="green" class="color">green</div>
-    <div class="color">yellow</div>
-    <div class="color">Purple</div>
-  </div> -->
-  <!-- <div class="message"></div>
-  <div class="output"></div>
-  <button>One</button>
-  <button>Two</button>
-  <button>Three</button> -->
-  <!-- <div>
-    <input type="text" id="addItem" />
-    <input type="button" id="addNew" value="Add to List" />
-  </div>
-  <div id="output">
-    <h1>Shopping List</h1>
-    <ol id="sList"></ol>
-  </div> -->
 
-  <!-- <div class="container">
-<div class="title">Title #1</div>
-<div class="myText">Just some text #1</div>
-<div class="title">Title #2</div>
-<div class="myText">Just some text #2</div>
-<div class="title">Title #3</div>
-<div class="myText">Just some text #3</div>
-</div> -->
-<!-- <div id="message">Complete JavaScript Course</div>
-<div>
-<input type="text" id="addFriend">
-<input type="button" id="addNew" value="Add Friend">
-</div>
-<table id="output"></table> -->
-<!-- <div id="output">Hello there</div>    
-<input type="text" value="JavaScript" id="val"> -->
-<!-- <div onclick="getVal('One')">UFG</div>
-<div onclick="getVal('Two')">HJKLKM</div>
-<div onclick="getVal('Three')">FGHJK</div> -->
-
-<!--  -->
-
-<!-- <div class="red">Red</div>
-<div class="green">green</div>
-<div class="blue">blue</div>
-<div class="orange" onmouseover="changeColor()">orange</div> 
-<div  id="divvy">purple</div> -->
   <body>
-    <h2 id="welcome">Welcome</h2>
+    <div id="welcome">Hi, </div>
     <form action="">
-      <input type="text" name="firstName"  placeholder="First Name">
-      <input type="text" name="lastName" placeholder="Last Name">
-      <button id="btn" onclick="getTarget()">Click Me</button>
+      <input type="text" name="firstname" placeholder="First Name" onchange="logEvent()">
+      <input type="text" name="lastname" placeholder="Last Name" onblur="logEvent()">
+      <input type="submit" onclick="sendInfo()" value="Submit">
     </form>
   </body>
   <script>
@@ -1485,289 +1416,397 @@ background-color: #ddd;
     //   li.textContent = input.value;
     //   ol.appendChild(li);
     // })
-  
-  // ********************************************************************************
-
-// const title = document.querySelectorAll(".title");
-// const myText = document.querySelectorAll(".myText");
-// console.log(title);
-
-// for(let i = 0; i < title.length; i++) {
-//   title[i].addEventListener("click", function() {
-//     // const nextElem = title[i].nextElementSibling;
-//     const nextElem = this.nextElementSibling;
-//     nextElem.classList.toggle("active");
-    
-//   })
-// }
-
-//    **************************************************************************
-
-// const addFriend = document.getElementById("addFriend"); // input
-// const addNew = document.getElementById("addNew");  // button
-// const output = document.getElementById("output");
-
-// const myArray = ["Awais", "Ali", "Ahmad", "Saad"];
-
-// addNew.addEventListener("click", buildContent)
-// // addNew.addEventListener("click", function(){
-//   // let value = addFriend.value;
-//   // let row = output.insertRow();
-//   // let cell = row.insertCell();
-  
-//   // myArray.push(value);
-//   // console.log(myArray);
-// // })
-
-// function buildContent() {
-//   myArray.forEach((names, index) => {
-//     let row = document.createElement("tr");
-//     let cell = document.createElement("td");
-//     let voteCell = document.createElement("td");
-//     let number = document.createElement("td");
-
-// addFriend.value = '';
-//   let value = addFriend.value;
-//   let row1 = output.insertRow();
-//   let cell1 = row1.insertCell();
-  
-//   myArray.push(value);
-//   console.log(value);
-
-//     number.textContent = index + 1;
-//     row.appendChild(number);
-
-//     cell.textContent = names;
-//     row.appendChild(cell);
-
-//     voteCell.textContent = "0";
-//     let voteNum = parseInt(voteCell.textContent);
-//     voteCell.textContent = voteNum;
-//     row.appendChild(voteCell);
-
-//     output.appendChild(row);
-
-//     row.addEventListener("click", function() {
-//       voteNum += 1;  
-//       voteCell.textContent = voteNum;
-//     })
-//   })
-// }
 
-// buildContent()
-// console.log(output);
+    // ********************************************************************************
 
-//
-
-//     ********************************************************************************
-
-
-//        ********************     Project 2    *****************
-
-// const score = document.querySelector(".score");
-// const puzzle= document.querySelector(".puzzle");
-// const letters = document.querySelector(".letters");
-// const btn = document.querySelector("button");
-
-// const myArray = ["Hide", "Up", "Left"];
-
-// btn.addEventListener("click", startGame);
-
-// function generateElements(type, parent, content, newClass) {
-//   let newElement = document.createElement(type);
-//   newElement.className = newClass;
-//   parent.appendChild(newElement);
-//   newElement.textContent = content;
-//   return newElement;
-// }
-
-// function builder() {
-//   puzzle.innerHTML = "";
-//   letters.innerHTML = "";
-
-//   for(let i = 0; i < game.solution.length; i++) {
-//      var letter = game.solution[i];
-//     letters.appendChild(createElement("span", letter, "letter"))
-//     puzzle.appendChild(createElement("span", "-", "letter"))
-//   }
-// }
-
-// function startGame() {
-//   if(myArray.length > 0) {
-//     btn.style.display = "none";
-//     game.init();
-//     score.innerHTML = "Total: 0";
-//     builder();
-
-//     game.solution = myArray.shift();
-//   }
-// }
-
-
-// const game = {
-//   solution: "",
-//   letters: [],
-//   elements: [],
-//   lettersLeft: 0,
+    // const title = document.querySelectorAll(".title");
+    // const myText = document.querySelectorAll(".myText");
+    // console.log(title);
 
-//   init: function() {
-//     let randomIndex = Math.floor(Math.random() * myArray.length);
-//     // this.solution = this.myArray[randomIndex];
-//     this.solution = myArray[randomIndex];
+    // for(let i = 0; i < title.length; i++) {
+    //   title[i].addEventListener("click", function() {
+    //     // const nextElem = title[i].nextElementSibling;
+    //     const nextElem = this.nextElementSibling;
+    //     nextElem.classList.toggle("active");
 
-//     this.letters = this.solution.split("");
+    //   })
+    // }
 
-//     this.lettersLeft = this.letters.length;
-
-//     puzzle.innerHTML = "";
-
-//     for(let i = 0; i < this.letters.length; i++) {
-//       let element = document.createElement("span");
-//       puzzle.appendChild(element);
-//       this.elements.push(element);
-//     }
-//   },
-
-//   checkLetter: function(letter) {
-//     let found = false;
-//     const letterElem = document.querySelector(".letter");
-
-//     for(let i = 0; i <br letters.length; i++) {
-//       if (this.letters[i] === letter) {
-
-//       } 
-//     }
-//   }
-// }
-
-// console.log(game.init());
-
-
-//      *********************************************************************************
-
-// document.getElementById("val").value = document.getElementById("output").innerHTML;
-
-// function getVal(val) {
-//   console.log(val);
-// }
-
-//
-
-// const btn = document.querySelector("button");
-// let value = true;
-// btn.addEventListener("click", function(){
-//   console.log("Msg");
-//   if(value) {
-//     document.body.style.backgroundColor = "#333";
-//     document.body.style.color = "#fff";
-//     value = false
-//   } else {
-//     document.body.style.backgroundColor = '#fff';
-//     document.body.style.color = "#333"
-//     value = true
-//   }
-// })
-
-// const divs = document.querySelectorAll("div");
-// divs.forEach((div) => {
-//   div.addEventListener("click", function(){
-//     document.body.style.backgroundColor = div.textContent;
-//   })
-// })
-
-//   ****************     Onload     ****************
-
-// window.onload = function(){
-//   console.log("Hello");
-// }
-
-// document.addEventListener("DOMContentLoaded", function(e) {
-//   console.log(e);
-// })
-
-//      ***********    Window vs Document objects    ************
-
-// function message(str, event) {
-//   console.log("String:", str);
-//   console.log("Event:", event);
-// }
-
-// window.onload = function(event){
-//   let msg = "Window Ready";
-//   message(msg, event);
-// }
-
-// //       Document will LOAD first ORDER does not MATTER
-
-// document.addEventListener("DOMContentLoaded", function(event) {
-//   let msg = "Document";
-//   message(msg, event);
-// })
-
-
-//
-
-///     ***************    Mouse Properties    ************
-
-// function changeColor() {
-//   document.querySelector(".orange").style.backgroundColor = "purple";
-// }
-
-// window.onload = function donenow() {
-// console.log("hi");
-// document.getElementById("divvy").addEventListener("mousedown",
-// function() { changeColor(this, "green"); });
-// document.getElementById("divvy").addEventListener("mouseup",
-// function() { changeColor(this, "yellow"); });
-// document.getElementById("divvy").addEventListener("dblclick",
-// function() { changeColor(this, "black"); });
-// document.getElementById("divvy").addEventListener("mouseout",
-// function() { changeColor(this, "blue"); });
-// }
-// console.log("hi2");
-// function changeColor(el, color) {
-// el.style.backgroundColor = color;
-// }
-
-
-//
-
-// window.onload = function mouseEvent() {
-//   const div = document.getElementById("divvy");
-//   div.addEventListener("mousedown", function() {
-//     changeColor(this, "green")
-//   });
-
-//   div.addEventListener("mouseover", function() {
-//     changeColor(this, "red");
-//   });
-
-//   div.addEventListener("mouseout", function() {
-//     changeColor(this, "yellow");
-//   })
-
-//   div.addEventListener("mouseenter", function() {
-//     changeColor(this, "green");
-//   })
-
-//   div.addEventListener("mouseleave", function() {
-//     changeColor(this, "blue");
-//   })
-// }
-
-// function changeColor(elem, color) {
-//   elem.style.backgroundColor = color;
-// }
-
-//
-
-function getTarget() {
-  let p = event.target.parentElement;
-  message(p.firstName.value + " " + p.lastName.value)
-}
-function message(mess) {
-  document.getElementById("welcome").innerHTML = mess;
-}
+    //    **************************************************************************
+
+    // const addFriend = document.getElementById("addFriend"); // input
+    // const addNew = document.getElementById("addNew");  // button
+    // const output = document.getElementById("output");
+
+    // const myArray = ["Awais", "Ali", "Ahmad", "Saad"];
+
+    // addNew.addEventListener("click", buildContent)
+    // // addNew.addEventListener("click", function(){
+    //   // let value = addFriend.value;
+    //   // let row = output.insertRow();
+    //   // let cell = row.insertCell();
+
+    //   // myArray.push(value);
+    //   // console.log(myArray);
+    // // })
+
+    // function buildContent() {
+    //   myArray.forEach((names, index) => {
+    //     let row = document.createElement("tr");
+    //     let cell = document.createElement("td");
+    //     let voteCell = document.createElement("td");
+    //     let number = document.createElement("td");
+
+    // addFriend.value = '';
+    //   let value = addFriend.value;
+    //   let row1 = output.insertRow();
+    //   let cell1 = row1.insertCell();
+
+    //   myArray.push(value);
+    //   console.log(value);
+
+    //     number.textContent = index + 1;
+    //     row.appendChild(number);
+
+    //     cell.textContent = names;
+    //     row.appendChild(cell);
+
+    //     voteCell.textContent = "0";
+    //     let voteNum = parseInt(voteCell.textContent);
+    //     voteCell.textContent = voteNum;
+    //     row.appendChild(voteCell);
+
+    //     output.appendChild(row);
+
+    //     row.addEventListener("click", function() {
+    //       voteNum += 1;
+    //       voteCell.textContent = voteNum;
+    //     })
+    //   })
+    // }
+
+    // buildContent()
+    // console.log(output);
+
+    //
+
+    //     ********************************************************************************
+
+    //        ********************     Project 2    *****************
+
+    // const score = document.querySelector(".score");
+    // const puzzle= document.querySelector(".puzzle");
+    // const letters = document.querySelector(".letters");
+    // const btn = document.querySelector("button");
+
+    // const myArray = ["Hide", "Up", "Left"];
+
+    // btn.addEventListener("click", startGame);
+
+    // function generateElements(type, parent, content, newClass) {
+    //   let newElement = document.createElement(type);
+    //   newElement.className = newClass;
+    //   parent.appendChild(newElement);
+    //   newElement.textContent = content;
+    //   return newElement;
+    // }
+
+    // function builder() {
+    //   puzzle.innerHTML = "";
+    //   letters.innerHTML = "";
+
+    //   for(let i = 0; i < game.solution.length; i++) {
+    //      var letter = game.solution[i];
+    //     letters.appendChild(createElement("span", letter, "letter"))
+    //     puzzle.appendChild(createElement("span", "-", "letter"))
+    //   }
+    // }
+
+    // function startGame() {
+    //   if(myArray.length > 0) {
+    //     btn.style.display = "none";
+    //     game.init();
+    //     score.innerHTML = "Total: 0";
+    //     builder();
+
+    //     game.solution = myArray.shift();
+    //   }
+    // }
+
+    // const game = {
+    //   solution: "",
+    //   letters: [],
+    //   elements: [],
+    //   lettersLeft: 0,
+
+    //   init: function() {
+    //     let randomIndex = Math.floor(Math.random() * myArray.length);
+    //     // this.solution = this.myArray[randomIndex];
+    //     this.solution = myArray[randomIndex];
+
+    //     this.letters = this.solution.split("");
+
+    //     this.lettersLeft = this.letters.length;
+
+    //     puzzle.innerHTML = "";
+
+    //     for(let i = 0; i < this.letters.length; i++) {
+    //       let element = document.createElement("span");
+    //       puzzle.appendChild(element);
+    //       this.elements.push(element);
+    //     }
+    //   },
+
+    //   checkLetter: function(letter) {
+    //     let found = false;
+    //     const letterElem = document.querySelector(".letter");
+
+    //     for(let i = 0; i <br letters.length; i++) {
+    //       if (this.letters[i] === letter) {
+
+    //       }
+    //     }
+    //   }
+    // }
+
+    // console.log(game.init());
+
+    //      *********************************************************************************
+
+    // document.getElementById("val").value = document.getElementById("output").innerHTML;
+
+    // function getVal(val) {
+    //   console.log(val);
+    // }
+
+    //
+
+    // const btn = document.querySelector("button");
+    // let value = true;
+    // btn.addEventListener("click", function(){
+    //   console.log("Msg");
+    //   if(value) {
+    //     document.body.style.backgroundColor = "#333";
+    //     document.body.style.color = "#fff";
+    //     value = false
+    //   } else {
+    //     document.body.style.backgroundColor = '#fff';
+    //     document.body.style.color = "#333"
+    //     value = true
+    //   }
+    // })
+
+    // const divs = document.querySelectorAll("div");
+    // divs.forEach((div) => {
+    //   div.addEventListener("click", function(){
+    //     document.body.style.backgroundColor = div.textContent;
+    //   })
+    // })
+
+    //   ****************     Onload     ****************
+
+    // window.onload = function(){
+    //   console.log("Hello");
+    // }
+
+    // document.addEventListener("DOMContentLoaded", function(e) {
+    //   console.log(e);
+    // })
+
+    //      ***********    Window vs Document objects    ************
+
+    // function message(str, event) {
+    //   console.log("String:", str);
+    //   console.log("Event:", event);
+    // }
+
+    // window.onload = function(event){
+    //   let msg = "Window Ready";
+    //   message(msg, event);
+    // }
+
+    // //       Document will LOAD first ORDER does not MATTER
+
+    // document.addEventListener("DOMContentLoaded", function(event) {
+    //   let msg = "Document";
+    //   message(msg, event);
+    // })
+
+    //
+
+    ///     ***************    Mouse Properties    ************
+
+    // function changeColor() {
+    //   document.querySelector(".orange").style.backgroundColor = "purple";
+    // }
+
+    // window.onload = function donenow() {
+    // console.log("hi");
+    // document.getElementById("divvy").addEventListener("mousedown",
+    // function() { changeColor(this, "green"); });
+    // document.getElementById("divvy").addEventListener("mouseup",
+    // function() { changeColor(this, "yellow"); });
+    // document.getElementById("divvy").addEventListener("dblclick",
+    // function() { changeColor(this, "black"); });
+    // document.getElementById("divvy").addEventListener("mouseout",
+    // function() { changeColor(this, "blue"); });
+    // }
+    // console.log("hi2");
+    // function changeColor(el, color) {
+    // el.style.backgroundColor = color;
+    // }
+
+    //
+
+    // window.onload = function mouseEvent() {
+    //   const div = document.getElementById("divvy");
+    //   div.addEventListener("mousedown", function() {
+    //     changeColor(this, "green")
+    //   });
+
+    //   div.addEventListener("mouseover", function() {
+    //     changeColor(this, "red");
+    //   });
+
+    //   div.addEventListener("mouseout", function() {
+    //     changeColor(this, "yellow");
+    //   })
+
+    //   div.addEventListener("mouseenter", function() {
+    //     changeColor(this, "green");
+    //   })
+
+    //   div.addEventListener("mouseleave", function() {
+    //     changeColor(this, "blue");
+    //   })
+    // }
+
+    // function changeColor(elem, color) {
+    //   elem.style.backgroundColor = color;
+    // }
+
+    //
+
+    // function getTarget() {
+    //   let p = event.target.parentElement;
+    //   message(p.firstName.value + " " + p.lastName.value)
+    // }
+    // function message(mess) {
+    //   document.getElementById("welcome").innerHTML = mess;
+    // }
+
+    //
+
+    //   const div = document.querySelector(".output");
+    //   const input = document.getElementById("myInput");
+    //   const btn1 = document.querySelector(".btn1");
+    //   const btn2 = document.querySelector(".btn2");
+    //   const btn3 = document.querySelector(".btn3");
+
+    //   const log = [];
+
+    // function captureDetails(event) {
+    //   const details = {
+    //     value: input.value,
+    //     type: event.target.type,
+    //     tagName: event.target.tagName,
+    //   }
+    //   div.textContent = details.value;
+    //   log.push(details);
+    //  input.value = ""
+    // }
+
+    // div.addEventListener("click", captureDetails);
+    // input.addEventListener("input", captureDetails);
+
+    // btn1.addEventListener("click", function(event) {
+    //   console.log(event.target);
+    //   captureDetails(event);
+    // });
+
+    // btn2.addEventListener("click", function(event){
+    //   console.log(event.target);
+    //   captureDetails(event)
+    // })
+
+    // btn3.addEventListener("click", function() {
+    //   console.log(log)
+    // })
+
+    //   ************     Event Bubbling    ****************
+
+    // const divs = document.getElementsByTagName("div");
+
+    // function bubble() {
+    //   console.log(this.innerText);
+    // }
+    // for(let i = 0; i < divs.length; i++) {
+    // divs[i].addEventListener("click", bubble)  //  Bubbling
+
+    //   Adding TRUE will ALTER the Behaviour of EVENT BUBBLING
+    // divs[i].addEventListener("click", bubble, true)  //  Capturing
+    // }
+
+    //
+
+    // const main = document.querySelector(".container");
+    // const box = document.querySelectorAll(".box");
+
+    // main.addEventListener("click", (event)=> {
+    //   console.log("4");
+    //   console.log(event.target.textContent);
+    // }, false);
+
+    // main.addEventListener("click", (event)=> {
+    //   console.log("1");
+    //   console.log(event.target.textContent);
+    // }, true)
+
+    // for(let i = 0; i < box.length; i++) {
+
+    //   box[i].addEventListener("click", ()=> {
+    //     console.log("3");
+    //   }, false);
+
+    //   box[i].addEventListener("click", ()=> {
+    //     console.log("2");
+    //   }, true)
+
+    // }
+
+    //
+
+    function logEvent() {
+      let p = event.target;
+      console.log("Hello");
+      if (p.name === "firstname") {
+        message("First Name Changed to " + p.value)
+      } else {
+        message("Last Name Changed to "  +  p.value)
+      }
+    }
+    function sendInfo() {
+      let p = event.target.parentElement;
+      message("Welcome " + p.firstname.value + p.lastname.value);
+    }
+
+    function message(m) {
+      document.getElementById("welcome").innerHTML = m;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   </script>
