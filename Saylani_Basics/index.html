@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
     <title>Awais</title>
 
     <style>
@@ -34,20 +34,55 @@
       /* opacity: 0.4; */
       /* } */
 
-      div {
-        border: 1px solid gray;
-        margin-left: 5px;
-      }
+      .box {
+height: 200px;
+width: 200px;
+padding: 20px;
+margin: 0 50px;  
+display: inline-block;
+border: 1px solid black;
+}
+#dragme {
+background-color: red;
+}
+.red {
+background-color: purple;
+}
     </style>
   </head>
 
+  <!-- <div id="wrapper">JavaScript is fun!</div>
+<input type="text" name="myNum1" onkeypress="return numCheck()"
+onpaste="return false">
+<input type="text" name="myNum2" onkeypress="return numCheck2()"
+onpaste="return false"> -->
+<!-- <div id="output"></div>
+<input 
+type="text" 
+placeholder="Text 1" 
+id="input1" 
+onpaste="onPaste()"
+>
+<input 
+type="text" 
+placeholder="Text 1" 
+id="input2" 
+> -->
+<!-- <div class="box" ondrop="onDrop()" ondragover="dragOver()">
+  1
+  <div id="dragme" ondragstart="dragStart()" draggable="true">
+    Drag Me
+  </div>
+</div>
+<div class="box" ondrop="onDrop()" ondragover="dragOver()">2</div>
+<div class="box" ondrop="onDrop()" ondragover="dragOver()">3</div> -->
   <body>
-    <div id="welcome">Hi, </div>
-    <form action="">
-      <input type="text" name="firstname" placeholder="First Name" onchange="logEvent()">
-      <input type="text" name="lastname" placeholder="Last Name" onblur="logEvent()">
-      <input type="submit" onclick="sendInfo()" value="Submit">
-    </form>
+    <div class="drag" draggable="true">
+      <h2>Drag and Drop Me</h2>
+    </div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
   </body>
   <script>
     // function testAvailability() {
@@ -1776,29 +1811,177 @@
 
     //
 
-    function logEvent() {
-      let p = event.target;
-      console.log("Hello");
-      if (p.name === "firstname") {
-        message("First Name Changed to " + p.value)
-      } else {
-        message("Last Name Changed to "  +  p.value)
-      }
-    }
-    function sendInfo() {
-      let p = event.target.parentElement;
-      message("Welcome " + p.firstname.value + p.lastname.value);
-    }
+    // function logEvent() {
+    //   let p = event.target;
+    //   console.log("Hello");
+    //   if (p.name === "firstname") {
+    //     message("First Name Changed to " + p.value)
+    //   } else {
+    //     message("Last Name Changed to "  +  p.value)
+    //   }
+    // }
+    // function sendInfo() {
+    //   let p = event.target.parentElement;
+    //   message("Welcome " + p.firstname.value + p.lastname.value);
+    // }
 
-    function message(m) {
-      document.getElementById("welcome").innerHTML = m;
-    }
+    // function message(m) {
+    //   document.getElementById("welcome").innerHTML = m;
+    // }
+
+    //
+
+    // const output = document.getElementById("welcome");
+    // const input1 = document.querySelector("input[name='firstname']");
+    // const input2 = document.querySelector("input[name='lastname']");
+    // console.log(input2);
+    // function logEvent() {
+    //   output.textContent = input1.value;
+    //   output.textContent = input2.value;
+    // }
+    // input1.addEventListener("change", function () {
+    //   console.log(input1.value);
+    // });
+    // input2.addEventListener("change", function () {
+    //   console.log(input2.value);
+    // });
+
+    //    ********************       KEY Events    ***********************
+
+    // const output = document.getElementById("welcome");
+    // function changeKey() {
+    //   message("Number: " + isNaN(event.key))
+    //   return !isNaN(event.key); 
+    // }
+    // function changeKey2() {
+    //   message("Not Number: " + isNaN(event.key))
+    //   return isNaN(event.key);
+    // }
+    // function message(m) {
+    //   output.innerHTML = m;
+    // }
+
+    //
+
+    // function numCheck() {
+    //   message(!isNaN(event.key));
+    //   return !isNaN(event.key);
+    // }
+    // function message(m) {
+    //   document.getElementById("wrapper").innerHTML = m;
+    // }
+
+    //
+
+  //  **********************************************************************************
+
+// const output = document.getElementById("output");
+// const inputs = document.querySelectorAll("input");
+
+// inputs.forEach((element) => {
+//   element.addEventListener("keydown", function(){
+//     if (!isNaN(element.value)) {
+//       output.innerHTML = element.value;
+//     }
+//   })
+
+//   element.addEventListener("keyup", function() {
+//     console.log(element.value);
+//   })
+// })
+
+// function onPaste() {
+//   console.log('Paste');
+// }
+
+//
+
+// function add(a, b) {
+//   console.log(a + b);
+// }
+// add(1)
+// console.log(undefined +  undefined);
+
+//     ************************          Drag and Drop         ********************
+
+// let holderItem;
+
+// function dragStart() {
+//   holderItem = event.target;
+// }
+
+// function dragOver() {
+//   event.preventDefault();
+// }
+
+// function onDrop() {
+//   event.preventDefault();
+//   if (event.target.className === "box") {
+//     event.target.appendChild(holderItem);
+//   }
+// }
+
+//
+
+///      ***************************      Project       ************************
+
+const dragMe = document.querySelector(".drag");
+const boxes = document.querySelectorAll(".box");
 
 
+// dragMe.addEventListener("dragstart", function(event) {
+//   event.target.style.opacity = ".5"
+// })
+// dragMe.addEventListener("dragend", function(event) {
+//   event.target.style.opacity = "1";
+// })
+
+// boxes.forEach((box) => {
+//   box.addEventListener("dragenter", function(event) {
+//     event.target.classList.add("red");
+//   })
+//   box.addEventListener("dragover", function(event) {
+//     event.preventDefault();
+//   })
+//   box.addEventListener("dragleave", function(event) {
+//     event.target.classList.remove("red")
+//   })
+//   box.addEventListener("drop", function(event) {
+//     event.target.appendChild(dragMe);
+//     event.preventDefault();
+//     console.log("hi");
+//   })
+// })
+
+    // dragMe.addEventListener("dragstart", function(event){
+    //   dragMe.innerHTML = "<h1>Bring Me back! I don't wanna go there</h1>";
+    //   event.target.style.opacity = ".5"
+    // })
+    // dragMe.addEventListener("dragend", function(event){
+    //   event.target.style.opacity = "1";
+    // })
+    // boxes.forEach((box) => {
+    //   box.addEventListener("dragover", function(event){
+    //     // box.style.backgroundColor = "purple";
+    //     event.preventDefault();
+    //   })
+    //   box.addEventListener("dragenter", function(event){
+    //     box.style.backgroundColor = "yellow";
+    //     // event.preventDefault();
+    //   })
+    //   box.addEventListener("dragleave", function(event) {
+    //     box.style.backgroundColor = "green"
+    //   })
+    //   box.addEventListener("drop", function(event) {
+    //     box.style.backgroundColor = "pink"
+    //   })
+    // })
 
 
+    //
 
 
+    
 
 
 
