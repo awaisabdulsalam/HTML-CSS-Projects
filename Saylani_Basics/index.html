@@ -61,7 +61,7 @@
       width: 100px;
     } */
 
-    .stars ul {
+    /* .stars ul {
 list-style-type: none;
 padding: 0;
 }
@@ -72,10 +72,20 @@ display: inline-block;
 }
 .orange {
 color: orange;
+} */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-.output {
-background-color: #ddd;
+.container {
+  height: 300px;
+  width: 300px;
 }
+.active {
+  background-color: red;
+}
+
     </style>
   </head>
 
@@ -129,15 +139,18 @@ method="get">
   <div id="bottom"></div> -->
   <!-- <button onclick="toRight()">Go to Right</button> -->
 
+  <!-- <ul class="stars">
+<li class="star starOne">&#10029;</li>
+<li class="star starTwo">&#10029;</li>
+<li class="star starThree">&#10029;</li>
+<li class="star">&#10029;</li>
+<li class="star">&#10029;</li>
+</ul> -->
   <body>
-    <ul class="stars">
-<li class="star">&#10029;</li>
-<li class="star">&#10029;</li>
-<li class="star">&#10029;</li>
-<li class="star">&#10029;</li>
-<li class="star">&#10029;</li>
-</ul>
-<div id="output">Str</div>
+    <div class="container">
+      <div id="output"></div>
+      <div class="text">This is Text</div>
+    </div>
   </body>
   <script>
     // function testAvailability() {
@@ -2218,25 +2231,79 @@ method="get">
 
     //   *********************       Rating Star      *********************
 
-    const stars = document.querySelectorAll(".stars .star");
-    const output = document.getElementById("output");
-    
-    stars.forEach((star, index) => {
-      star.addEventListener("click", starRate);
+    // const stars = document.querySelectorAll(".stars .star");
+    // const output = document.getElementById("output");
 
-      function starRate(event) {
-        output.textContent = `You rated ${index + 1} star(s)`
+    // stars.forEach((star, index) => {
+    //   star.addEventListener("click", starRate);
 
-        stars.forEach((star, i) => {
-          if (i <= index) {
-            star.classList.add("orange");
-          } else {
-            star.classList.remove("orange");
-          }
-        })
-      }
+    //   function starRate(event) {
+    //     output.textContent = `You rated ${index + 1} star(s)`
 
-    })
+    //     stars.forEach((star, i) => {
+    //       console.log(index === i);
+    //       if (i <= index) {
+    //         star.classList.add("orange");
+    //       } else {
+    //         star.classList.remove("orange");
+    //       }
+    //     })
+    //   }
+    // })
+
+      // stars.forEach((star, index) => {
+      //   star.addEventListener("click", addStar);
+
+      //   function addStar(event) {
+      //     console.log(event.target);
+      //     output.textContent = `You rated ${index + 1} Star(s)`
+
+      //     stars.forEach((star, i) => {
+      //       console.log("INDEX: " +index+ " I: "+ i);
+      //       if (i <= index) {
+      //         star.classList.add("orange");
+      //       } else {
+      //         star.classList.remove("orange");
+      //       }
+      //     })
+      //   }
+      // })
+
+      //
+
+//       ********************      Mouse Tracker      *****************
+
+      const main = document.querySelector(".container");
+      const output = document.getElementById("output"); 
+
+      main.addEventListener("mouseover", function(event){
+        event.target.classList.add("active");
+      });
+      main.addEventListener("mouseout", function(event){
+        event.target.classList.remove("active");
+      })
+      main.addEventListener("mousemove", function(event){
+        console.log(event.clientX)
+        console.log(event.clientY)
+        output.innerHTML = `<p>On X is: ${event.clientX} and on Y is: ${event.clientY}</p>`
+      })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   </script>
