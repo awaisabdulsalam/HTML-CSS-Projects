@@ -34,19 +34,47 @@
       /* opacity: 0.4; */
       /* } */
 
-      .box {
-height: 200px;
-width: 200px;
-padding: 20px;
-margin: 0 50px;  
+      /* #block {
+      background-color: purple;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+} */
+      /* #block {
+        display: flex;
+        z-index: 1;
+      }
+      #top {
+        height: 150px;
+        width: 150px;
+        background-color: #ff6347;
+      z-index: -1;
+    }
+    #bottom {
+      height: 200px;
+      width: 200px;
+      background-color: aqua;
+      z-index: -1;
+    }
+    img {
+      height: 100px;
+      width: 100px;
+    } */
+
+    .stars ul {
+list-style-type: none;
+padding: 0;
+}
+.star {
+font-size: 2em;
+color: #ddd;
 display: inline-block;
-border: 1px solid black;
 }
-#dragme {
-background-color: red;
+.orange {
+color: orange;
 }
-.red {
-background-color: purple;
+.output {
+background-color: #ddd;
 }
     </style>
   </head>
@@ -76,13 +104,40 @@ id="input2"
 </div>
 <div class="box" ondrop="onDrop()" ondragover="dragOver()">2</div>
 <div class="box" ondrop="onDrop()" ondragover="dragOver()">3</div> -->
+<!-- <div class="drag" draggable="true">
+  <h2>Drag and Drop Me</h2>
+</div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div> 
+action="prac1.html" 
+-->
+<!-- <form 
+method="get">
+  <input type="text" name="firstname" placeholder="First Name">
+  <input type="text" name="lastname" placeholder="Last Name">
+  <input type="text" name="age" placeholder="Age">
+  <input type="submit" value="submit">
+</form> -->
+<!-- <div id="block">
+  <img src="../wireless-02.png" alt="" srcset="">
+  <img src="../wireless-01.png" alt="" srcset="">
+  <img src="../wireless-03.png" alt="" srcset="">
+  <img src="../double-sofa-01.png" alt="" srcset="">
+</div> -->
+<!-- <div id="top"></div>
+  <div id="bottom"></div> -->
+  <!-- <button onclick="toRight()">Go to Right</button> -->
+
   <body>
-    <div class="drag" draggable="true">
-      <h2>Drag and Drop Me</h2>
-    </div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
+    <ul class="stars">
+<li class="star">&#10029;</li>
+<li class="star">&#10029;</li>
+<li class="star">&#10029;</li>
+<li class="star">&#10029;</li>
+<li class="star">&#10029;</li>
+</ul>
+<div id="output">Str</div>
   </body>
   <script>
     // function testAvailability() {
@@ -1925,8 +1980,8 @@ id="input2"
 
 ///      ***************************      Project       ************************
 
-const dragMe = document.querySelector(".drag");
-const boxes = document.querySelectorAll(".box");
+// const dragMe = document.querySelector(".drag");
+// const boxes = document.querySelectorAll(".box");
 
 
 // dragMe.addEventListener("dragstart", function(event) {
@@ -1978,18 +2033,210 @@ const boxes = document.querySelectorAll(".box");
     // })
 
 
+    //      ********************       FORM       *****************************
+
+    // let query = window.location.search;
+    // let params = new URLSearchParams(query);
+    // let name = params.get("val");
+    // let id = params.get("id");
+    // console.log(name);
+    // console.log(id);
+
+    // console.log(window.location.search);
+    // console.log(new URLSearchParams(query));
+    // console.log(params.get("val"));
+
+    // function valForm() {
+    //   let parent = event.target.children;
+
+    //   if (parent.firstname.value == "") {
+    //     message("Enter Your First Name");
+    //     return false;
+    //   }
+    //   if (parent.lastname.value == "") {
+    //     message("Enter Your Last Name");
+    //     return false;
+    //   }
+    //   if (parent.firstname.value && parent.lastname.value === "") {
+    //     message("Enter Your Full Name");
+    //     return false;
+    //   }
+    //   return true;
+    // }
+
+    // function message(m) {
+    //   document.getElementById("wrapper").innerHTML = m;
+    // }
+
     //
 
+    // const form = document.querySelector("form");
+    // form.addEventListener("submit", function(event) {
+      
+    //   let error = false;
 
+    //   function checker(value, fieldName) {
+    //     console.log(`Value is ${value} field is ${fieldName}`);
+    //   }
+    //   if (!form.firstname.value) {
+    //     console.log("First Name is required");
+    //     error = true;
+    //   } else {
+    //     console.log(form.firstname.value, "FirstName");
+    //   }
+
+    //   if (!form.lastname.value) {
+    //     console.log("Last Name is required");
+    //     error = true;
+    //   } else {
+    //     console.log(form.lastname.value, "LastName");
+    //   }
+
+    //   if (!form.age.value) {
+    //     console.log("Age is required");
+    //     error = true;
+    //   } else if(parseInt(form.age.value) < 19) {
+    //     console.log("Age must be 19");
+    //     error = true;
+    //   } else {
+    //     checker(form.age.value, "Age");
+    //   }
+
+    //   if(error) {
+    //     event.preventDefault();
+    //     console.log("Form Submission Prevented due to Error");
+    //   }
+    // })
+   
+    //
+
+    //    ********************      Animations      *************************
+
+    //  function toRight() {
+    //   let block = document.getElementById("block");
+    //   let top = document.getElementById("top");
+    //   let bottom = document.getElementById("bottom");
+    //   let x = 0;
+
+    //   setInterval(function(){
+    //     if(x === 1300) {
+    //       clearInterval();
+    //     } else {
+    //       x++;
+    //       block.style.left = x + "px";
+    //       top.style.left = x + "px";
+    //       bottom.style.top = x + "px";
+    //     }
+    //   }, 2)
+    //  }
+
+    //
+    const block = document.getElementById("block");
+
+    // const object = {
+    //   speed: 5,
+    //   direction: 1,
+    //   position: 0,
+    // }
+    // block.addEventListener("click", function(event) {
+    //   let count = 30;
+    //   let interval = setInterval(() => {
+    //     if(count < 1) {
+    //       clearInterval(interval);
+    //       return;
+    //     } 
+
+    //     if(object.position > 800 || object.position < 0) {
+    //       object.direction *= -1;
+    //     }
+
+    //     object.position += object.speed * object.direction;
+    //     // console.log(object.position);
+    //     block.style.left = object.position + "px";
+
+    //     console.log(`Position: ${object.position}`);
+    //     count--;
+    //     // console.log(count);
+
+    //    }, 100)
+    // })
+
+
+    // const properties = {
+    //   speed: 20,
+    //   direction: 1,
+    //   position: 0,
+    // }
+
+    // block.addEventListener("click" , function() {
+    //   let couter = 30;
+    //   const interval = setInterval (function() {
+    //     if (couter < 1) {
+    //       clearInterval(interval);
+    //       return;
+    //     }
+
+    //     if (properties.position > window.innerWidth || properties.position < 0) {
+    //       properties.direction *= -1;
+    //     }
+
+    //     properties.position += properties.direction * properties.speed;
+    //     block.style.left = properties.position + "px";
+
+    //     console.log(`Position: ${properties.position}`);
+
+    //     couter--;
+    //   }, 100)
+    // })
+
+    //
+
+    //    *****************         Projects          *****************
+
+    // const main = document.getElementById("container");
+    // const divs = document.querySelectorAll(".box");
     
+    // const values = [];
+    // const object = {
+    //   text: "",
+    //   id: "",
+    //   tagName: "",
+    //   className: "",
+    // }
+    // main.addEventListener("click", function(event) {
+    //   // console.log(event.target.id);
+    //   let elem = event.target;
+    //   object.text = elem.textContent;
+    //   object.id = elem.id;
+    //   object.tagName = elem.tagName;
+    //   object.className = elem.className;
+    //   values.push(object);
+    //   console.log(values);
+    // })
 
+    //
 
+    //   *********************       Rating Star      *********************
 
+    const stars = document.querySelectorAll(".stars .star");
+    const output = document.getElementById("output");
+    
+    stars.forEach((star, index) => {
+      star.addEventListener("click", starRate);
 
+      function starRate(event) {
+        output.textContent = `You rated ${index + 1} star(s)`
 
+        stars.forEach((star, i) => {
+          if (i <= index) {
+            star.classList.add("orange");
+          } else {
+            star.classList.remove("orange");
+          }
+        })
+      }
 
-
-
+    })
 
 
   </script>
