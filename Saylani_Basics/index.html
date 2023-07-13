@@ -78,12 +78,27 @@ color: orange;
   margin: 0;
   box-sizing: border-box;
 }
-.container {
-  height: 300px;
-  width: 300px;
+.output {
+  width: 500px;
+  height: 400px;
+  margin: auto;
+  text-align: center;
+  border: 1px solid gray;
 }
-.active {
+
+.box {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 50px;
+  left: 20%;
   background-color: red;
+}
+
+.message {
+  text-align: center;
+  padding: 10px;
+  font-size: 1.3rem;
 }
 
     </style>
@@ -147,10 +162,8 @@ method="get">
 <li class="star">&#10029;</li>
 </ul> -->
   <body>
-    <div class="container">
-      <div id="output"></div>
-      <div class="text">This is Text</div>
-    </div>
+      <div class="output"></div>
+      <div class="message"></div>
   </body>
   <script>
     // function testAvailability() {
@@ -2273,27 +2286,193 @@ method="get">
 
 //       ********************      Mouse Tracker      *****************
 
-      const main = document.querySelector(".container");
-      const output = document.getElementById("output"); 
+      // const main = document.querySelector(".container");
+      // const output = document.getElementById("output"); 
 
-      main.addEventListener("mouseover", function(event){
-        event.target.classList.add("active");
-      });
-      main.addEventListener("mouseout", function(event){
-        event.target.classList.remove("active");
-      })
-      main.addEventListener("mousemove", function(event){
-        console.log(event.clientX)
-        console.log(event.clientY)
-        output.innerHTML = `<p>On X is: ${event.clientX} and on Y is: ${event.clientY}</p>`
-      })
+      // main.addEventListener("mouseover", function(event){
+      //   event.target.classList.add("active");
+      // });
+      // main.addEventListener("mouseout", function(event){
+      //   event.target.classList.remove("active");
+      // })
+      // main.addEventListener("mousemove", function(event){
+      //   console.log(event.clientX)
+      //   console.log(event.clientY)
+      //   output.innerHTML = `<p>On X is: ${event.clientX} and on Y is: ${event.clientY}</p>`
+      // })
+
+      //
+
+      //    *****************     Box clicker speed test game     ***************
+
+        // const output = document.querySelector(".output");
+        // const message = document.querySelector(".message");
+        // const div = document.createElement("div");
+
+        // const game = {
+        //   timer: null,
+        //   start: null,
+        // }
+
+      //   div.classList.add("box");
+      //   output.appendChild(div);
+      //   div.textContent = "Press to Start"
+
+      //   function generateNum(num) {
+      //     let random = Math.floor(Math.random * num);
+      //     return random;
+      //   }
+
+      //   div.addEventListener("click", function(event) {
+      //     event.target.style.display = "none";
+      //     setTimeout(function() {
+      //       event.target.style.display = "block"
+      //     }, 2000)
+
+      //   //   if (game.start) {
+      //   //     div.textContent = "loading..."
+      //   //   } else {
+      //   //     let date = new Date().getTime();
+      //   //     let update = (date - game.start) / 1000;
+      //   //     console.log(update);
+      //   //     output.textContent = update;
+      //   //   }
+      //   // }
+      // })
+      
+      // function handleClick() {
+      //   message.textContent = "Click it...";
+      //   let date = new Date().getTime();
+      //   game.start = date;
+      //   event.target.style.display = "block";
+
+
+  //       function getRandomValue(max) {
+  //   return Math.floor(Math.random() * max);
+  // }
+
+  // // 6. Event listener to start the game
+  // div.addEventListener('click', startGame);
+
+  // function startGame() {
+  //   div.style.display = 'none';
+  //   if (game.start === null) {
+  //     message.textContent = 'Loading...';
+  //   }
+  //   game.timer = setTimeout(addBox, getRandomValue(3000)); // Adjust the random millisecond value as needed
+  // }
+
+  // // Function to add the box once the timer is up
+  // function addBox() {
+  //   const availableSpace = 500 - 50; // Total container width minus the box width
+  //   const randomPositionLeft = getRandomValue(availableSpace);
+  //   const randomPositionTop = getRandomValue(availableSpace);
+    
+  //   div.style.left = randomPositionLeft + 'px';
+  //   div.style.top = randomPositionTop + 'px';
+  //   div.style.display = 'block';
+    
+  //   message.textContent = 'Click it...';
+  //   game.start = new Date().getTime();
+  // }
+
+  // 7. Calculate and display the score
+  // div.addEventListener('click', calculateScore);
+
+  // function calculateScore() {
+  //   if (game.start !== null) {
+  //     const currentTime = new Date().getTime();
+  //     const durationInSeconds = (currentTime - game.start) / 1000;
+  //     message.textContent = 'Your score: ' + durationInSeconds + ' seconds';
+  //     game.start = null;
+  //   }
+  // }
 
 
 
+  //
+
+    // function getRandomNum(max) {
+    //   return Math.floor(Math.random * max);
+    // }
+
+    // div.addEventListener("click", function() {
+    //   this.style.display = "none";
+    //   if (game.start === null) {
+    //     message.textContent = "loading..."
+    //   }
+    //   setTimeout(addBox, getRandomNum(3000));
+    // })
+
+    // function calculate() {
+    //   let currentTime = new Date().getTime();
+    //   let calculateBoth = (currentTime - game.start) / 1000;
+    //   message.textContent = `You score is ${calculateBoth.toFixed(2)}`
+    // }
+    // function addBox() {
+    //   message.textContent = "Click me"
+    //   let startTime = new Date().getTime();
+    //   div.style.display = "block";
+
+    //   let toTop = getRandomNum(450);
+    //   let toLeft = getRandomNum(450);
+    //   div.style.left = toLeft + "px";
+    //   div.style.top = toTop + "px";
+    //   game.timer = setTimeout(calculate, getRandomNum(5000))
+    // }
 
 
 
+    // Task 1
+const outputElement = document.querySelector('.output');
+const messageElement = document.querySelector('.message');
 
+// Task 2
+const boxElement = document.createElement('div');
+boxElement.classList.add('box');
+outputElement.appendChild(boxElement);
+
+// Task 3
+messageElement.textContent = 'Press to Start';
+
+// Task 4
+const game = {
+  timer: null,
+  start: null
+};
+
+// Task 5
+function getRandomValue(max) {
+  return Math.floor(Math.random() * (max + 1));
+}
+
+// Task 6
+boxElement.addEventListener('click', function() {
+  this.style.display = 'none';
+  if (game.start === null) {
+    messageElement.textContent = 'Loading...';
+  }
+  setTimeout(addBox, getRandomValue(3000));
+});
+
+// Task 7
+function showScore() {
+  const currentTime = new Date().getTime();
+  const duration = (currentTime - game.start) / 1000;
+  messageElement.textContent = 'Your score: ' + duration.toFixed(2) + ' seconds';
+}
+
+// Task 8
+function addBox() {
+  messageElement.textContent = 'Click it...';
+  game.start = new Date().getTime();
+  boxElement.style.display = 'block';
+  const leftPos = getRandomValue(450);
+  const topPos = getRandomValue(450);
+  boxElement.style.left = leftPos + 'px';
+  boxElement.style.top = topPos + 'px';
+  game.timer = setTimeout(showScore, getRandomValue(5000));
+}
 
 
 
