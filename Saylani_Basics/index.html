@@ -2424,61 +2424,114 @@ method="get">
 
 
     // Task 1
-const outputElement = document.querySelector('.output');
-const messageElement = document.querySelector('.message');
+// const outputElement = document.querySelector('.output');
+// const messageElement = document.querySelector('.message');
 
-// Task 2
-const boxElement = document.createElement('div');
-boxElement.classList.add('box');
-outputElement.appendChild(boxElement);
+// // Task 2
+// const boxElement = document.createElement('div');
+// boxElement.classList.add('box');
+// outputElement.appendChild(boxElement);
 
-// Task 3
-messageElement.textContent = 'Press to Start';
+// // Task 3
+// messageElement.textContent = 'Press to Start';
 
-// Task 4
-const game = {
-  timer: null,
-  start: null
-};
+// // Task 4
+// const game = {
+//   timer: null,
+//   start: null
+// };
 
 // Task 5
-function getRandomValue(max) {
-  return Math.floor(Math.random() * (max + 1));
-}
+// function getRandomValue(max) {
+//   return Math.floor(Math.random() * (max + 1));
+// }
 
-// Task 6
-boxElement.addEventListener('click', function() {
-  this.style.display = 'none';
-  if (game.start === null) {
-    messageElement.textContent = 'Loading...';
-  }
-  setTimeout(addBox, getRandomValue(3000));
-});
+// // Task 6
+// boxElement.addEventListener('click', function() {
+//   this.style.display = 'none';
+//   if (game.start === null) {
+//     messageElement.textContent = 'Loading...';
+//   }
+//   setTimeout(addBox, getRandomValue(3000));
+// });
 
-// Task 7
-function showScore() {
-  const currentTime = new Date().getTime();
-  const duration = (currentTime - game.start) / 1000;
-  messageElement.textContent = 'Your score: ' + duration.toFixed(2) + ' seconds';
-}
+// // Task 7
+// function showScore() {
+//   const currentTime = new Date().getTime();
+//   console.log(currentTime - game.start);
+//   const duration = (currentTime - game.start) / 1000;
+//   messageElement.textContent = 'Your score: ' + duration.toFixed(2) + ' seconds';
+// }
 
-// Task 8
-function addBox() {
-  messageElement.textContent = 'Click it...';
-  game.start = new Date().getTime();
-  boxElement.style.display = 'block';
-  const leftPos = getRandomValue(450);
-  const topPos = getRandomValue(450);
-  boxElement.style.left = leftPos + 'px';
-  boxElement.style.top = topPos + 'px';
-  game.timer = setTimeout(showScore, getRandomValue(5000));
-}
-
-
-
+// // Task 8
+// function addBox() {
+//   messageElement.textContent = 'Click it...';
+//   game.start = new Date().getTime();
+//   boxElement.style.display = 'block';
+//   const leftPos = getRandomValue(450);
+//   const topPos = getRandomValue(450);
+//   boxElement.style.left = leftPos + 'px';
+//   boxElement.style.top = topPos + 'px';
+//   game.timer = setTimeout(showScore, getRandomValue(3000));
+// }
 
 
+// boxElement.addEventListener("click", function(){
+//   this.style.display = "none";
+//   setTimeout(changePosition, getRandomNum(5000));
+// } 
+// );
 
+// function getRandomNum(max) {
+//   return Math.floor(Math.random() * max);
+// }
+
+// function setDuration() {
+//   let current = new Date().getTime();
+//   let duration = (current - game.start) / 1000;
+//   console.log(duration);
+//   messageElement.textContent = `Your Score is ${duration.toFixed(1)}sec`
+// }
+
+// function changePosition() {
+//   messageElement.textContent = "Click it";
+//   game.start = new Date().getTime();
+//   boxElement.style.display = "block";
+//   let top = getRandomNum(450);
+//   let left = getRandomNum(450);
+//   boxElement.style.top = top + "px";
+//   boxElement.style.left = left + "px";
+//   game.timer = setTimeout( setDuration , getRandomNum(3000))
+// }
+
+
+//
+
+//    ************************     Intermediate      ********************
+
+// let text = "I love JavaScript React and JavaScript!";
+// console.log(text.match(/javascript|nodejs|react/i))
+
+//
+
+//    **************         Arguments     *************
+
+//   1. Arguments return all the Parameters in an OBJECT
+
+
+// function test(a, b, c) {
+//   console.log(arguments[0]);
+//   console.log(arguments[1]);
+//   console.log(arguments[2]);
+// } 
+// test("a", "b", "c");
+
+//    ***************       Hoisting     **************
+
+let x;
+//   JavaScript move declaration to the top of the file
+x = 5;
+console.log(x);
 
 
 
