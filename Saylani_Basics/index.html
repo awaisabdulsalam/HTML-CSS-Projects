@@ -78,7 +78,7 @@ color: orange;
   margin: 0;
   box-sizing: border-box;
 }
-.output {
+/* .output {
   width: 500px;
   height: 400px;
   margin: auto;
@@ -98,9 +98,15 @@ color: orange;
 .message {
   text-align: center;
   padding: 10px;
-  font-size: 1.3rem;
+  font-size: 1.3rem; 
 }
+*/
 
+  .ready {
+background-color: #ddd;
+color: red;
+text-decoration: line-through;
+}
     </style>
   </head>
 
@@ -162,8 +168,12 @@ method="get">
 <li class="star">&#10029;</li>
 </ul> -->
   <body>
-      <div class="output"></div>
-      <div class="message"></div>
+      <div class="main">
+<input placeholder="New Item" value="test item" maxlength="30">
+<button>Add</button>
+</div>
+<ul class="output">
+</ul>
   </body>
   <script>
     // function testAvailability() {
@@ -2528,10 +2538,126 @@ method="get">
 
 //    ***************       Hoisting     **************
 
-let x;
-//   JavaScript move declaration to the top of the file
-x = 5;
-console.log(x);
+// let x;
+// //   JavaScript move declaration to the top of the file
+// x = 5;
+// console.log(x);
+
+//
+
+//    *********************    Debugging     *****************
+
+  // let val = 5;
+  // val += adder();
+  // console.log(val);
+  // val += adder();
+  // console.log(val);
+  // val += adder();
+  // console.log(val);
+
+  // function adder() {
+  //   let counter = val;
+  //   for(let i = 0; i < val; i++) {
+  //     counter++;
+  //   }
+  //   return counter;
+  // }
+
+  //
+
+  // try {
+  //   doSome();
+  // } catch (e) {
+  //   console.log("Oh Oh,..");
+  // } finally {
+  //   console.log("Finally");
+  // }
+  // function doSome() {
+  //   throw RangeError()
+  // }
+
+  //
+
+  
+  // function checkVal(val) {
+  //   try {
+  //     if (isNaN(val)) {
+  //       console.error("Not a Number");
+  //     } else {
+  //       console.log("Go to Number");
+  //     }
+  //   } catch (e) {
+  //     console.log(e);
+  //   } finally {
+  //     console.log("Finally");
+  //   }
+  //   return val;
+
+  // }
+
+  // checkVal("Hello");
+  // checkVal(7);
+
+
+//     ***************       Local Storage      *****************
+
+    // let message = "Hello Storage";
+    // localStorage.setItem("greet", message);
+    // let name = "Awais";
+    // localStorage.setItem("name", name);
+    // let a = "AAA";
+    // localStorage.setItem("a", a);
+
+    // // if (localStorage.getItem("greet")) {
+    // //   document.getElementById("output").innerHTML = localStorage.getItem("greet");
+    // // }
+    // if (localStorage.getItem("name")) {
+    //   document.getElementById("message").innerHTML = localStorage.getItem("name");
+    // }
+    // if (localStorage.getItem("a")) {
+    //   document.getElementById("message").innerHTML = localStorage.getItem("a");
+    // }
+
+    // // console.log(localStorage.getItem("name"));
+
+    // console.log(localStorage);
+    // console.log(window.localStorage.removeItem("a"));
+    // console.log(window.localStorage.clear());
+    // console.log(localStorage);
+
+    //
+
+    const input = document.querySelector("input");
+    const btn = document.querySelector("button");
+    const output = document.querySelector(".output");
+
+    let tasks;
+    if (tasklist.localStorage) {
+      tasks = [localStorage.tasklist];
+      let inJson = JSON.parse(tasks)
+      tasks.forEach((task) => {
+
+      })
+    } else {
+      tasks = [];
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
