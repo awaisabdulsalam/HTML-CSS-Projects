@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 15vh;
+      background-color: #0065c3;
+      color: #fff;
+      padding: 10px 20px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .nav_first {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .nav_img:hover {
+      transform: matrix(1, 0, 0, 1, 0, 0);
+    }
+    ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style-type: none;
+      margin-left: 40px;
+    }
+    ul > li {
+      margin-left: 40px;
+    }
+    li > a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 15px;
+    }
+    .nav_btn {
+      padding: 7px 20px;
+      margin: 0 5px;
+      border-radius: 20px;
+      border: 2px solid #fff;
+      background-color: transparent;
+      color: #fff;
+      font-weight: 900;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .nav_btn:hover {
+      background-color: #fff;
+      color: #0065c3;
+    }
+    .nav_second {
+      display: flex;
+      align-items: center;
+    }
+
+    /*********************      Container      *************************/
+
+    .container {
+      display: flex;
+      height: 100vh;
+      background-image: url("./background.png");
+    }
+
+    .container_one {
+      background-image: url("./bottle1.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      /* border: 10px solid rgb(207, 21, 21); */
+      width: 50%;
+      height: 100vh;
+    }
+    .container_two {
+      /* border: 10px solid rgb(7, 7, 7); */
+      width: 50%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .container_two_img {
+        width: 80%;
+    }
+    .container_two_text {
+        color: #fff;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 10px;
+         padding: 0 20px;
+      margin: 20px 0;
+    }
+    .container_two_btn{
+        margin-top: 15px;
+    }
+
+    #container_two {
+        display: flex;
+        height: 100vh;
+        background-color: black;
+        /* padding: 20px 0; */
+    }
+    .second_container_one{
+      background-image: url("./pzs-can-nobug-desktop.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      /* border: 10px solid rgb(207, 21, 21); */
+      width: 50%;
+      height: 100vh;
+    }
+    .img_text_contianer{
+        display: flex;
+        justify-content: space-between;
+        color: #fff;
+        margin-top: 30px;
+    }
+    .img_text{
+        margin: 10px 20px;
+    }
+    .img_text > p {
+        color: #fff;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+    }
+    .doctor {
+        margin: 10px 20px;
+        height: 100px;
+        width: 250px;
+    }
+
+    .third_main_container{
+        display: flex;
+      height: 100vh;
+      background-color: #04225a;
+      /* padding: 20px 0; */
+    }
+    .third_container_one{
+          background-image: url("./Nitro_Pepsi_CAN_Glass.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      /* border: 10px solid rgb(207, 21, 21); */
+      width: 50%;
+      height: 100vh;
+    }
+    .third_container_heading {
+        color: #fff;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 25px;
+        margin-top: 10px;
+    }
+
+    .fourth_main_container {
+      display: flex;
+      justify-content: center;
+      background-color: #0065c3;
+      height: 130vh;
+    }
+
+    .fourth_one {
+      /* width: 40%; */
+    }
+    .fourth_one_img1 {
+      margin: 50px 10px 0 20px;
+    }
+     .fourth_one_img2 {
+      margin: 50px 10px 0px 20px;
+    }
+    .fourth_one_img3 {
+      position: relative;
+    }
+    .bottom_img {
+      /* height: 430px; */
+      width: 400px;
+    }
+    .tagline_img {
+      height: 30vh;
+      width: 30vh;
+      position: absolute;
+      right: 60px;
+      bottom: 20px;
+    }
+    .four_one_text {
+      display: flex;
+      justify-content: center;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 15px 10px;
+      background-color: #1437bf;
+    }
+
+    .fifth_one {
+      width: 50%;
+      position: relative;
+    }
+
+    .fourth_two {
+       width: 50%;
+    }
+   .pep_lunch_img {
+    margin-left: 10px;
+    width: 100%;
+    height: 100%;
+   }
+
+   .fifth_main_container {
+    background-color: #00418f;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    background-image: url("./bg-2-desktop@2x.png");
+    background-position: bottom;
+    background-position-y: 80px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+   }
+
+   .fifth_one_img{
+    margin: 80px 20px;
+    height: 50vh;
+  }
+  .twill2 {
+    height: 30px;
+    width: auto;
+    position: absolute;
+    bottom: 100px;
+    left: 20px;
+  }
+   .fifth_two > img{
+    width: 100%;
+    height: auto;
+  }
+
+  .sixth_container {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    height: 100vh;
+    background-color: #014da9;
+    padding-top: 30px;
+  }
+  .sixth_container_one {
+    background-image: url("./twil-can.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 50%;
+      height: 100vh;
+  }
+
+  .seventh_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #0065c3;
+    padding: 40px 40px;
+  }
+  .seventh_one {
+    color: #fff;
+    padding-left: 50px;
+    width: 50%;
+  }
+  .seventh_two {
+    width: 50%;
+  }
+  .promotion_img {
+    height: 300px;
+    width: auto;
+  }
+  .seven_head {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    font-weight: 800;
+  }
+  .seven_para {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+  }
+  
+  .eighth_container {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .image_gal {
+    height: 230px;
+    width: 230px;
+    margin: 0;
+  }
+  #eighth_head {
+    color: #0065c3;
+  }
+
+  </style>
+
+  <!-- *********************          BODY        ********************** -->
+  <body>
+    <nav>
+      <div class="nav_first">
+        <div>
+          <img src="./papsi-logo.png" class="nav_img" alt="" srcset="" />
+        </div>
+        <div>
+          <ul>
+            <li><a href="">VIEW PRODUCTS</a></li>
+            <li><a href="">WHAT'S NEW</a></li>
+            <li><a href="">NEWSETTLER</a></li>
+            <li><a href="">CONTACT US</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="nav_second">
+        <button class="nav_btn">BY PEPSI PRODUCTS</button>
+      </div>
+    </nav>
+    <main>
+      <div class="container">
+        <div class="container_one">
+        </div>
+        <div class="container_two">
+                <img src="./Nitro_Logo.png" class="container_two_img"  alt="" srcset="">
+                <button class="nav_btn container_two_btn">BY PEPSI PRODUCTS</button>
+                <p class="container_two_text">Ends 09/17/23. Age restrictions apply, US/DC/Guam/PR. Limit 1 per person. New & qualified returning subscribers only. $10.99/month after trial until cancelled. Rules & Terms at pressplayonsummer.com.</p>
+        </div>
+      </div>
+
+  <div class="" id="container_two">
+        <div class="second_container_one"></div>
+        <div class="container_two">
+                <img src="./Nitro_Logo.png" class="container_two_img"  alt="" srcset="">
+                <div class="img_text_contianer">
+                    <div class="img_text">
+                        <img src="./doc.webp" class="doctor" alt="">
+                        <p>Steve Martin Great Acting or <br> Great Taste</p>
+                    </div>
+                    <div class="img_text">
+                        <img src="./doc.webp" class="doctor" alt="">
+                        <p>Ben Stiller Great Acting or <br> Great Taste</p>
+                    </div>
+                </div>
+        </div>
+      </div>
+
+         <div class="third_main_container">
+        <div class="third_container_one">
+        </div>
+        <div class="container_two">
+                <img src="./Nitro_Logo.png" class="container_two_img"  alt="" srcset="">
+                <h1 class="third_container_heading">SMOOTH, CREAMY, DELICIOUS</h1>
+                <button class="nav_btn container_two_btn">LEARN MORE</button>
+        </div>
+      </div>
+
+      <div class="fourth_main_container">
+        <div class="fourth_one">
+          <div class="fourth_one_img1">
+            <img src="./doc.webp" class="bottom_img" alt="">
+            <p class="four_one_text">BETTER WITH PEPSI | RIBS </p>
+          </div>
+          <div class="fourth_one_img2">
+            <img src="./doc.webp" class="bottom_img" alt="">
+            <p class="four_one_text">BETTER WITH PEPSI | NACHOS </p>
+          </div>
+        </div>
+        <div class="fourth_two">
+          <img src="./PEP_BWP_D.jpg" class="pep_lunch_img" alt="" srcset="">
+        </div>
+      </div>
+
+      <div class="fifth_main_container">
+        <div class="fifth_one">
+          <img src="./headline@3x.png" class="fifth_one_img" alt="">
+          <img src="./twill@2x.png" class="twill2" alt="">
+        </div>
+        <div class="fifth_two">
+          <img src="./bg-1-desktop@2x.png" class="bg_bottom_img" alt="" srcset="">
+        </div>
+      </div>
+
+      <div class="sixth_container" id="container_two_copy">
+        <div class="sixth_container_one"></div>
+        <div class="sixth_container_two">
+                <img src="./twil-header-dt.png" class="container_two_img"  alt="" srcset="">
+                <div class="img_text_contianer">
+                </div>
+        </div>
+      </div>
+
+      <div class="seventh_container">
+        <div class="seventh_one">
+          <h1 class="seven_head"> ALL YOUR <br> FAVORITE FLAVORS.<br> ALL RIGHT HERE. </h1>
+          <p class="seven_para">Pepsi. Diet Pepsi. Pepsi Zero Sugar. The gang’s all here.<br> Compare flavors, get nutritional facts and check out<br> ingredients for all our Pepsi products. </p>
+          <button class="nav_btn container_two_btn">VIEW PRODUCTS</button>
+        </div>
+        <div class="seventh_two">
+          <img src="./promotion1-hero_v3.png" class="promotion_img" alt="">
+        </div>
+      </div>
+
+      <div class="eighth_container">
+        <h1 class="seven_head" id="eighth_head">STAY ON THE PULSE. FOLLOW PEPSI.</h1>
+        <div class="image_gallery">
+          <img src="./doc.webp" class="image_gal" alt="">
+          <img src="./doc.webp" class="image_gal" alt="">
+          <img src="./doc.webp" class="image_gal" alt="">
+          <img src="./doc.webp" class="image_gal" alt="">
+          <img src="./doc.webp" class="image_gal" alt="">
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
