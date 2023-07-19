@@ -167,14 +167,17 @@ method="get">
 <li class="star">&#10029;</li>
 <li class="star">&#10029;</li>
 </ul> -->
-  <body>
-      <div class="main">
+<!-- <div class="main">
 <input placeholder="New Item" value="test item" maxlength="30">
 <button>Add</button>
 </div>
 <ul class="output">
-</ul>
-  </body>
+</ul> -->
+        <body>
+        <textarea id="text1" name="txtarea" rows=2 cols=50></textarea> 
+          <button>Get Emails</button>
+        <textarea id="text2" name="txtarea2" rows=2 cols=50></textarea>
+        </body>
   <script>
     // function testAvailability() {
     //   let y = "I will return";
@@ -2627,27 +2630,83 @@ method="get">
 
     //
 
-    const input = document.querySelector("input");
-    const btn = document.querySelector("button");
-    const output = document.querySelector(".output");
+    // const input = document.querySelector("input");
+    // const btn = document.querySelector("button");
+    // const output = document.querySelector(".output");
 
-    let tasks;
-    if (tasklist.localStorage) {
-      tasks = [localStorage.tasklist];
-      let inJson = JSON.parse(tasks)
-      tasks.forEach((task) => {
+    // let tasks;
+    // if (tasklist.localStorage) {
+    //   tasks = [localStorage.tasklist];
+    //   let inJson = JSON.parse(tasks)
+    //   tasks.forEach((task) => {
 
+    //   })
+    // } else {
+    //   tasks = [];
+    // }
+
+
+    //
+
+    // const object = {
+    //   "obj1": {
+    //     "name": "Awais",
+    //     "age": 21,
+    //   },
+    //   "obj2": {
+    //     "name": "Ali",
+    //     "age": 20,
+    //   }
+    // }
+    // function loopObj() {
+    //   for(key in object) {
+    //     console.log(key, object[key]);
+    //   }
+    // }
+    // loopObj()
+
+      // let str = "{\"name\": \"Awais\", \"age\": \"21\"}";
+      // let obj = JSON.parse(str);
+      // console.log(obj.name, "is", obj.age);
+      // console.log(str);
+
+      // let toStr = JSON.stringify(object);
+      // let toParse = JSON.parse(toStr)
+      // console.log(typeof object);
+      // console.log(typeof toStr);
+      // console.log(toStr);
+      // console.log(typeof toParse);
+      // console.log(toParse);
+
+    //   let myList = [{
+    //     "name": "Awais",
+    //     "status": false,
+    //   },
+    //   {
+    //     "name": "Shahzaib",
+    //     "status": false,
+    //   }
+    // ];
+
+    // let newStr = JSON.stringify(myList);
+    // let newParse = JSON.parse(newStr)
+    // console.log(myList);
+    // console.log(Array.isArray(newStr));
+    // console.log(Array.isArray(newParse));
+
+    // newParse.forEach((el) => console.log(el))
+
+    //
+
+    //    **********************     Email Extract     ****************************
+
+      const text1 = document.getElementById("text1");
+      const text2 = document.getElementById("text2");
+      const btn = document.querySelector("button");
+
+      btn.addEventListener("click", function() {
+        let content = text1.textContent
       })
-    } else {
-      tasks = [];
-    }
-
-
-
-
-
-
-
 
 
 
