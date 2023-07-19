@@ -2705,7 +2705,22 @@ method="get">
       const btn = document.querySelector("button");
 
       btn.addEventListener("click", function() {
-        let content = text1.textContent
+        const content = text1.value;
+        const emailRegex = /[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}/g;
+        const matchedEmails = content.match(emailRegex) || [];
+        // console.log(matchedEmails);
+
+        const uniqueEmails = [];
+        for (const email of matchedEmails) {
+          // console.log(email);
+          if (!uniqueEmails.includes(email)) {
+            uniqueEmails.push(email);
+            console.log(uniqueEmails);
+          }
+        }
+
+        text2.value = uniqueEmails.join("\n");
+
       })
 
 
