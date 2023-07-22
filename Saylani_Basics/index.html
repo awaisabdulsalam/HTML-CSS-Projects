@@ -61,7 +61,7 @@
       width: 100px;
     } */
 
-    /* .stars ul {
+      /* .stars ul {
 list-style-type: none;
 padding: 0;
 }
@@ -73,12 +73,12 @@ display: inline-block;
 .orange {
 color: orange;
 } */
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-/* .output {
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      /* .output {
   width: 500px;
   height: 400px;
   margin: auto;
@@ -100,13 +100,29 @@ color: orange;
   padding: 10px;
   font-size: 1.3rem; 
 }
+
+.ready {
+  background-color: #ddd;
+  color: red;
+  text-decoration: line-through;
+}
 */
 
-  .ready {
-background-color: #ddd;
-color: red;
-text-decoration: line-through;
-}
+      .hide {
+        display: none;
+      }
+      .error {
+        color: red;
+        font-size: 0.8em;
+        font-family: sans-serif;
+        font-style: italic;
+      }
+      input {
+        border-color: #ddd;
+        width: 400px;
+        display: block;
+        font-size: 1.5em;
+      }
     </style>
   </head>
 
@@ -115,7 +131,7 @@ text-decoration: line-through;
 onpaste="return false">
 <input type="text" name="myNum2" onkeypress="return numCheck2()"
 onpaste="return false"> -->
-<!-- <div id="output"></div>
+  <!-- <div id="output"></div>
 <input 
 type="text" 
 placeholder="Text 1" 
@@ -127,7 +143,7 @@ type="text"
 placeholder="Text 1" 
 id="input2" 
 > -->
-<!-- <div class="box" ondrop="onDrop()" ondragover="dragOver()">
+  <!-- <div class="box" ondrop="onDrop()" ondragover="dragOver()">
   1
   <div id="dragme" ondragstart="dragStart()" draggable="true">
     Drag Me
@@ -135,7 +151,7 @@ id="input2"
 </div>
 <div class="box" ondrop="onDrop()" ondragover="dragOver()">2</div>
 <div class="box" ondrop="onDrop()" ondragover="dragOver()">3</div> -->
-<!-- <div class="drag" draggable="true">
+  <!-- <div class="drag" draggable="true">
   <h2>Drag and Drop Me</h2>
 </div>
 <div class="box"></div>
@@ -143,20 +159,20 @@ id="input2"
 <div class="box"></div> 
 action="prac1.html" 
 -->
-<!-- <form 
+  <!-- <form 
 method="get">
   <input type="text" name="firstname" placeholder="First Name">
   <input type="text" name="lastname" placeholder="Last Name">
   <input type="text" name="age" placeholder="Age">
   <input type="submit" value="submit">
 </form> -->
-<!-- <div id="block">
+  <!-- <div id="block">
   <img src="../wireless-02.png" alt="" srcset="">
   <img src="../wireless-01.png" alt="" srcset="">
   <img src="../wireless-03.png" alt="" srcset="">
   <img src="../double-sofa-01.png" alt="" srcset="">
 </div> -->
-<!-- <div id="top"></div>
+  <!-- <div id="top"></div>
   <div id="bottom"></div> -->
   <!-- <button onclick="toRight()">Go to Right</button> -->
 
@@ -167,17 +183,33 @@ method="get">
 <li class="star">&#10029;</li>
 <li class="star">&#10029;</li>
 </ul> -->
-<!-- <div class="main">
+  <!-- <div class="main">
 <input placeholder="New Item" value="test item" maxlength="30">
 <button>Add</button>
 </div>
 <ul class="output">
 </ul> -->
-        <body>
-        <textarea id="text1" name="txtarea" rows=2 cols=50></textarea> 
-          <button>Get Emails</button>
-        <textarea id="text2" name="txtarea2" rows=2 cols=50></textarea>
-        </body>
+  <!-- <textarea id="text1" name="txtarea" rows=2 cols=50></textarea> 
+  <button>Get Emails</button>
+<textarea id="text2" name="txtarea2" rows=2 cols=50></textarea> -->
+
+  <body>
+    <form name="myform">
+      Email : 
+      <input type="text" name="email" class="email" />
+       <span class="error hide"></span>
+      <br />
+      Password : 
+      <input type="password" name="password" class="password" />
+      <span class="error hide"></span>
+      <br />
+      User Name : 
+      <input type="text" name="userName" class="userName" />
+      <span class="error hide"></span>
+      <br />
+      <input type="submit" value="Sign Up" class="submit" />
+    </form>
+  </body>
   <script>
     // function testAvailability() {
     //   let y = "I will return";
@@ -1945,7 +1977,7 @@ method="get">
     // const output = document.getElementById("welcome");
     // function changeKey() {
     //   message("Number: " + isNaN(event.key))
-    //   return !isNaN(event.key); 
+    //   return !isNaN(event.key);
     // }
     // function changeKey2() {
     //   message("Not Number: " + isNaN(event.key))
@@ -1967,85 +1999,84 @@ method="get">
 
     //
 
-  //  **********************************************************************************
+    //  **********************************************************************************
 
-// const output = document.getElementById("output");
-// const inputs = document.querySelectorAll("input");
+    // const output = document.getElementById("output");
+    // const inputs = document.querySelectorAll("input");
 
-// inputs.forEach((element) => {
-//   element.addEventListener("keydown", function(){
-//     if (!isNaN(element.value)) {
-//       output.innerHTML = element.value;
-//     }
-//   })
+    // inputs.forEach((element) => {
+    //   element.addEventListener("keydown", function(){
+    //     if (!isNaN(element.value)) {
+    //       output.innerHTML = element.value;
+    //     }
+    //   })
 
-//   element.addEventListener("keyup", function() {
-//     console.log(element.value);
-//   })
-// })
+    //   element.addEventListener("keyup", function() {
+    //     console.log(element.value);
+    //   })
+    // })
 
-// function onPaste() {
-//   console.log('Paste');
-// }
+    // function onPaste() {
+    //   console.log('Paste');
+    // }
 
-//
+    //
 
-// function add(a, b) {
-//   console.log(a + b);
-// }
-// add(1)
-// console.log(undefined +  undefined);
+    // function add(a, b) {
+    //   console.log(a + b);
+    // }
+    // add(1)
+    // console.log(undefined +  undefined);
 
-//     ************************          Drag and Drop         ********************
+    //     ************************          Drag and Drop         ********************
 
-// let holderItem;
+    // let holderItem;
 
-// function dragStart() {
-//   holderItem = event.target;
-// }
+    // function dragStart() {
+    //   holderItem = event.target;
+    // }
 
-// function dragOver() {
-//   event.preventDefault();
-// }
+    // function dragOver() {
+    //   event.preventDefault();
+    // }
 
-// function onDrop() {
-//   event.preventDefault();
-//   if (event.target.className === "box") {
-//     event.target.appendChild(holderItem);
-//   }
-// }
+    // function onDrop() {
+    //   event.preventDefault();
+    //   if (event.target.className === "box") {
+    //     event.target.appendChild(holderItem);
+    //   }
+    // }
 
-//
+    //
 
-///      ***************************      Project       ************************
+    ///      ***************************      Project       ************************
 
-// const dragMe = document.querySelector(".drag");
-// const boxes = document.querySelectorAll(".box");
+    // const dragMe = document.querySelector(".drag");
+    // const boxes = document.querySelectorAll(".box");
 
+    // dragMe.addEventListener("dragstart", function(event) {
+    //   event.target.style.opacity = ".5"
+    // })
+    // dragMe.addEventListener("dragend", function(event) {
+    //   event.target.style.opacity = "1";
+    // })
 
-// dragMe.addEventListener("dragstart", function(event) {
-//   event.target.style.opacity = ".5"
-// })
-// dragMe.addEventListener("dragend", function(event) {
-//   event.target.style.opacity = "1";
-// })
-
-// boxes.forEach((box) => {
-//   box.addEventListener("dragenter", function(event) {
-//     event.target.classList.add("red");
-//   })
-//   box.addEventListener("dragover", function(event) {
-//     event.preventDefault();
-//   })
-//   box.addEventListener("dragleave", function(event) {
-//     event.target.classList.remove("red")
-//   })
-//   box.addEventListener("drop", function(event) {
-//     event.target.appendChild(dragMe);
-//     event.preventDefault();
-//     console.log("hi");
-//   })
-// })
+    // boxes.forEach((box) => {
+    //   box.addEventListener("dragenter", function(event) {
+    //     event.target.classList.add("red");
+    //   })
+    //   box.addEventListener("dragover", function(event) {
+    //     event.preventDefault();
+    //   })
+    //   box.addEventListener("dragleave", function(event) {
+    //     event.target.classList.remove("red")
+    //   })
+    //   box.addEventListener("drop", function(event) {
+    //     event.target.appendChild(dragMe);
+    //     event.preventDefault();
+    //     console.log("hi");
+    //   })
+    // })
 
     // dragMe.addEventListener("dragstart", function(event){
     //   dragMe.innerHTML = "<h1>Bring Me back! I don't wanna go there</h1>";
@@ -2070,7 +2101,6 @@ method="get">
     //     box.style.backgroundColor = "pink"
     //   })
     // })
-
 
     //      ********************       FORM       *****************************
 
@@ -2111,7 +2141,7 @@ method="get">
 
     // const form = document.querySelector("form");
     // form.addEventListener("submit", function(event) {
-      
+
     //   let error = false;
 
     //   function checker(value, fieldName) {
@@ -2146,7 +2176,7 @@ method="get">
     //     console.log("Form Submission Prevented due to Error");
     //   }
     // })
-   
+
     //
 
     //    ********************      Animations      *************************
@@ -2170,7 +2200,7 @@ method="get">
     //  }
 
     //
-    const block = document.getElementById("block");
+    // const block = document.getElementById("block");
 
     // const object = {
     //   speed: 5,
@@ -2183,7 +2213,7 @@ method="get">
     //     if(count < 1) {
     //       clearInterval(interval);
     //       return;
-    //     } 
+    //     }
 
     //     if(object.position > 800 || object.position < 0) {
     //       object.direction *= -1;
@@ -2199,7 +2229,6 @@ method="get">
 
     //    }, 100)
     // })
-
 
     // const properties = {
     //   speed: 20,
@@ -2234,7 +2263,7 @@ method="get">
 
     // const main = document.getElementById("container");
     // const divs = document.querySelectorAll(".box");
-    
+
     // const values = [];
     // const object = {
     //   text: "",
@@ -2277,133 +2306,130 @@ method="get">
     //   }
     // })
 
-      // stars.forEach((star, index) => {
-      //   star.addEventListener("click", addStar);
+    // stars.forEach((star, index) => {
+    //   star.addEventListener("click", addStar);
 
-      //   function addStar(event) {
-      //     console.log(event.target);
-      //     output.textContent = `You rated ${index + 1} Star(s)`
+    //   function addStar(event) {
+    //     console.log(event.target);
+    //     output.textContent = `You rated ${index + 1} Star(s)`
 
-      //     stars.forEach((star, i) => {
-      //       console.log("INDEX: " +index+ " I: "+ i);
-      //       if (i <= index) {
-      //         star.classList.add("orange");
-      //       } else {
-      //         star.classList.remove("orange");
-      //       }
-      //     })
-      //   }
-      // })
+    //     stars.forEach((star, i) => {
+    //       console.log("INDEX: " +index+ " I: "+ i);
+    //       if (i <= index) {
+    //         star.classList.add("orange");
+    //       } else {
+    //         star.classList.remove("orange");
+    //       }
+    //     })
+    //   }
+    // })
 
-      //
+    //
 
-//       ********************      Mouse Tracker      *****************
+    //       ********************      Mouse Tracker      *****************
 
-      // const main = document.querySelector(".container");
-      // const output = document.getElementById("output"); 
+    // const main = document.querySelector(".container");
+    // const output = document.getElementById("output");
 
-      // main.addEventListener("mouseover", function(event){
-      //   event.target.classList.add("active");
-      // });
-      // main.addEventListener("mouseout", function(event){
-      //   event.target.classList.remove("active");
-      // })
-      // main.addEventListener("mousemove", function(event){
-      //   console.log(event.clientX)
-      //   console.log(event.clientY)
-      //   output.innerHTML = `<p>On X is: ${event.clientX} and on Y is: ${event.clientY}</p>`
-      // })
+    // main.addEventListener("mouseover", function(event){
+    //   event.target.classList.add("active");
+    // });
+    // main.addEventListener("mouseout", function(event){
+    //   event.target.classList.remove("active");
+    // })
+    // main.addEventListener("mousemove", function(event){
+    //   console.log(event.clientX)
+    //   console.log(event.clientY)
+    //   output.innerHTML = `<p>On X is: ${event.clientX} and on Y is: ${event.clientY}</p>`
+    // })
 
-      //
+    //
 
-      //    *****************     Box clicker speed test game     ***************
+    //    *****************     Box clicker speed test game     ***************
 
-        // const output = document.querySelector(".output");
-        // const message = document.querySelector(".message");
-        // const div = document.createElement("div");
+    // const output = document.querySelector(".output");
+    // const message = document.querySelector(".message");
+    // const div = document.createElement("div");
 
-        // const game = {
-        //   timer: null,
-        //   start: null,
-        // }
+    // const game = {
+    //   timer: null,
+    //   start: null,
+    // }
 
-      //   div.classList.add("box");
-      //   output.appendChild(div);
-      //   div.textContent = "Press to Start"
+    //   div.classList.add("box");
+    //   output.appendChild(div);
+    //   div.textContent = "Press to Start"
 
-      //   function generateNum(num) {
-      //     let random = Math.floor(Math.random * num);
-      //     return random;
-      //   }
+    //   function generateNum(num) {
+    //     let random = Math.floor(Math.random * num);
+    //     return random;
+    //   }
 
-      //   div.addEventListener("click", function(event) {
-      //     event.target.style.display = "none";
-      //     setTimeout(function() {
-      //       event.target.style.display = "block"
-      //     }, 2000)
+    //   div.addEventListener("click", function(event) {
+    //     event.target.style.display = "none";
+    //     setTimeout(function() {
+    //       event.target.style.display = "block"
+    //     }, 2000)
 
-      //   //   if (game.start) {
-      //   //     div.textContent = "loading..."
-      //   //   } else {
-      //   //     let date = new Date().getTime();
-      //   //     let update = (date - game.start) / 1000;
-      //   //     console.log(update);
-      //   //     output.textContent = update;
-      //   //   }
-      //   // }
-      // })
-      
-      // function handleClick() {
-      //   message.textContent = "Click it...";
-      //   let date = new Date().getTime();
-      //   game.start = date;
-      //   event.target.style.display = "block";
+    //   //   if (game.start) {
+    //   //     div.textContent = "loading..."
+    //   //   } else {
+    //   //     let date = new Date().getTime();
+    //   //     let update = (date - game.start) / 1000;
+    //   //     console.log(update);
+    //   //     output.textContent = update;
+    //   //   }
+    //   // }
+    // })
 
+    // function handleClick() {
+    //   message.textContent = "Click it...";
+    //   let date = new Date().getTime();
+    //   game.start = date;
+    //   event.target.style.display = "block";
 
-  //       function getRandomValue(max) {
-  //   return Math.floor(Math.random() * max);
-  // }
+    //       function getRandomValue(max) {
+    //   return Math.floor(Math.random() * max);
+    // }
 
-  // // 6. Event listener to start the game
-  // div.addEventListener('click', startGame);
+    // // 6. Event listener to start the game
+    // div.addEventListener('click', startGame);
 
-  // function startGame() {
-  //   div.style.display = 'none';
-  //   if (game.start === null) {
-  //     message.textContent = 'Loading...';
-  //   }
-  //   game.timer = setTimeout(addBox, getRandomValue(3000)); // Adjust the random millisecond value as needed
-  // }
+    // function startGame() {
+    //   div.style.display = 'none';
+    //   if (game.start === null) {
+    //     message.textContent = 'Loading...';
+    //   }
+    //   game.timer = setTimeout(addBox, getRandomValue(3000)); // Adjust the random millisecond value as needed
+    // }
 
-  // // Function to add the box once the timer is up
-  // function addBox() {
-  //   const availableSpace = 500 - 50; // Total container width minus the box width
-  //   const randomPositionLeft = getRandomValue(availableSpace);
-  //   const randomPositionTop = getRandomValue(availableSpace);
-    
-  //   div.style.left = randomPositionLeft + 'px';
-  //   div.style.top = randomPositionTop + 'px';
-  //   div.style.display = 'block';
-    
-  //   message.textContent = 'Click it...';
-  //   game.start = new Date().getTime();
-  // }
+    // // Function to add the box once the timer is up
+    // function addBox() {
+    //   const availableSpace = 500 - 50; // Total container width minus the box width
+    //   const randomPositionLeft = getRandomValue(availableSpace);
+    //   const randomPositionTop = getRandomValue(availableSpace);
 
-  // 7. Calculate and display the score
-  // div.addEventListener('click', calculateScore);
+    //   div.style.left = randomPositionLeft + 'px';
+    //   div.style.top = randomPositionTop + 'px';
+    //   div.style.display = 'block';
 
-  // function calculateScore() {
-  //   if (game.start !== null) {
-  //     const currentTime = new Date().getTime();
-  //     const durationInSeconds = (currentTime - game.start) / 1000;
-  //     message.textContent = 'Your score: ' + durationInSeconds + ' seconds';
-  //     game.start = null;
-  //   }
-  // }
+    //   message.textContent = 'Click it...';
+    //   game.start = new Date().getTime();
+    // }
 
+    // 7. Calculate and display the score
+    // div.addEventListener('click', calculateScore);
 
+    // function calculateScore() {
+    //   if (game.start !== null) {
+    //     const currentTime = new Date().getTime();
+    //     const durationInSeconds = (currentTime - game.start) / 1000;
+    //     message.textContent = 'Your score: ' + durationInSeconds + ' seconds';
+    //     game.start = null;
+    //   }
+    // }
 
-  //
+    //
 
     // function getRandomNum(max) {
     //   return Math.floor(Math.random * max);
@@ -2434,175 +2460,168 @@ method="get">
     //   game.timer = setTimeout(calculate, getRandomNum(5000))
     // }
 
-
-
     // Task 1
-// const outputElement = document.querySelector('.output');
-// const messageElement = document.querySelector('.message');
+    // const outputElement = document.querySelector('.output');
+    // const messageElement = document.querySelector('.message');
 
-// // Task 2
-// const boxElement = document.createElement('div');
-// boxElement.classList.add('box');
-// outputElement.appendChild(boxElement);
+    // // Task 2
+    // const boxElement = document.createElement('div');
+    // boxElement.classList.add('box');
+    // outputElement.appendChild(boxElement);
 
-// // Task 3
-// messageElement.textContent = 'Press to Start';
+    // // Task 3
+    // messageElement.textContent = 'Press to Start';
 
-// // Task 4
-// const game = {
-//   timer: null,
-//   start: null
-// };
+    // // Task 4
+    // const game = {
+    //   timer: null,
+    //   start: null
+    // };
 
-// Task 5
-// function getRandomValue(max) {
-//   return Math.floor(Math.random() * (max + 1));
-// }
+    // Task 5
+    // function getRandomValue(max) {
+    //   return Math.floor(Math.random() * (max + 1));
+    // }
 
-// // Task 6
-// boxElement.addEventListener('click', function() {
-//   this.style.display = 'none';
-//   if (game.start === null) {
-//     messageElement.textContent = 'Loading...';
-//   }
-//   setTimeout(addBox, getRandomValue(3000));
-// });
+    // // Task 6
+    // boxElement.addEventListener('click', function() {
+    //   this.style.display = 'none';
+    //   if (game.start === null) {
+    //     messageElement.textContent = 'Loading...';
+    //   }
+    //   setTimeout(addBox, getRandomValue(3000));
+    // });
 
-// // Task 7
-// function showScore() {
-//   const currentTime = new Date().getTime();
-//   console.log(currentTime - game.start);
-//   const duration = (currentTime - game.start) / 1000;
-//   messageElement.textContent = 'Your score: ' + duration.toFixed(2) + ' seconds';
-// }
+    // // Task 7
+    // function showScore() {
+    //   const currentTime = new Date().getTime();
+    //   console.log(currentTime - game.start);
+    //   const duration = (currentTime - game.start) / 1000;
+    //   messageElement.textContent = 'Your score: ' + duration.toFixed(2) + ' seconds';
+    // }
 
-// // Task 8
-// function addBox() {
-//   messageElement.textContent = 'Click it...';
-//   game.start = new Date().getTime();
-//   boxElement.style.display = 'block';
-//   const leftPos = getRandomValue(450);
-//   const topPos = getRandomValue(450);
-//   boxElement.style.left = leftPos + 'px';
-//   boxElement.style.top = topPos + 'px';
-//   game.timer = setTimeout(showScore, getRandomValue(3000));
-// }
+    // // Task 8
+    // function addBox() {
+    //   messageElement.textContent = 'Click it...';
+    //   game.start = new Date().getTime();
+    //   boxElement.style.display = 'block';
+    //   const leftPos = getRandomValue(450);
+    //   const topPos = getRandomValue(450);
+    //   boxElement.style.left = leftPos + 'px';
+    //   boxElement.style.top = topPos + 'px';
+    //   game.timer = setTimeout(showScore, getRandomValue(3000));
+    // }
 
+    // boxElement.addEventListener("click", function(){
+    //   this.style.display = "none";
+    //   setTimeout(changePosition, getRandomNum(5000));
+    // }
+    // );
 
-// boxElement.addEventListener("click", function(){
-//   this.style.display = "none";
-//   setTimeout(changePosition, getRandomNum(5000));
-// } 
-// );
+    // function getRandomNum(max) {
+    //   return Math.floor(Math.random() * max);
+    // }
 
-// function getRandomNum(max) {
-//   return Math.floor(Math.random() * max);
-// }
+    // function setDuration() {
+    //   let current = new Date().getTime();
+    //   let duration = (current - game.start) / 1000;
+    //   console.log(duration);
+    //   messageElement.textContent = `Your Score is ${duration.toFixed(1)}sec`
+    // }
 
-// function setDuration() {
-//   let current = new Date().getTime();
-//   let duration = (current - game.start) / 1000;
-//   console.log(duration);
-//   messageElement.textContent = `Your Score is ${duration.toFixed(1)}sec`
-// }
+    // function changePosition() {
+    //   messageElement.textContent = "Click it";
+    //   game.start = new Date().getTime();
+    //   boxElement.style.display = "block";
+    //   let top = getRandomNum(450);
+    //   let left = getRandomNum(450);
+    //   boxElement.style.top = top + "px";
+    //   boxElement.style.left = left + "px";
+    //   game.timer = setTimeout( setDuration , getRandomNum(3000))
+    // }
 
-// function changePosition() {
-//   messageElement.textContent = "Click it";
-//   game.start = new Date().getTime();
-//   boxElement.style.display = "block";
-//   let top = getRandomNum(450);
-//   let left = getRandomNum(450);
-//   boxElement.style.top = top + "px";
-//   boxElement.style.left = left + "px";
-//   game.timer = setTimeout( setDuration , getRandomNum(3000))
-// }
+    //
 
+    //    ************************     Intermediate      ********************
 
-//
+    // let text = "I love JavaScript React and JavaScript!";
+    // console.log(text.match(/javascript|nodejs|react/i))
 
-//    ************************     Intermediate      ********************
+    //
 
-// let text = "I love JavaScript React and JavaScript!";
-// console.log(text.match(/javascript|nodejs|react/i))
+    //    **************         Arguments     *************
 
-//
+    //   1. Arguments return all the Parameters in an OBJECT
 
-//    **************         Arguments     *************
+    // function test(a, b, c) {
+    //   console.log(arguments[0]);
+    //   console.log(arguments[1]);
+    //   console.log(arguments[2]);
+    // }
+    // test("a", "b", "c");
 
-//   1. Arguments return all the Parameters in an OBJECT
+    //    ***************       Hoisting     **************
 
+    // let x;
+    // //   JavaScript move declaration to the top of the file
+    // x = 5;
+    // console.log(x);
 
-// function test(a, b, c) {
-//   console.log(arguments[0]);
-//   console.log(arguments[1]);
-//   console.log(arguments[2]);
-// } 
-// test("a", "b", "c");
+    //
 
-//    ***************       Hoisting     **************
+    //    *********************    Debugging     *****************
 
-// let x;
-// //   JavaScript move declaration to the top of the file
-// x = 5;
-// console.log(x);
+    // let val = 5;
+    // val += adder();
+    // console.log(val);
+    // val += adder();
+    // console.log(val);
+    // val += adder();
+    // console.log(val);
 
-//
+    // function adder() {
+    //   let counter = val;
+    //   for(let i = 0; i < val; i++) {
+    //     counter++;
+    //   }
+    //   return counter;
+    // }
 
-//    *********************    Debugging     *****************
+    //
 
-  // let val = 5;
-  // val += adder();
-  // console.log(val);
-  // val += adder();
-  // console.log(val);
-  // val += adder();
-  // console.log(val);
+    // try {
+    //   doSome();
+    // } catch (e) {
+    //   console.log("Oh Oh,..");
+    // } finally {
+    //   console.log("Finally");
+    // }
+    // function doSome() {
+    //   throw RangeError()
+    // }
 
-  // function adder() {
-  //   let counter = val;
-  //   for(let i = 0; i < val; i++) {
-  //     counter++;
-  //   }
-  //   return counter;
-  // }
+    //
 
-  //
+    // function checkVal(val) {
+    //   try {
+    //     if (isNaN(val)) {
+    //       console.error("Not a Number");
+    //     } else {
+    //       console.log("Go to Number");
+    //     }
+    //   } catch (e) {
+    //     console.log(e);
+    //   } finally {
+    //     console.log("Finally");
+    //   }
+    //   return val;
 
-  // try {
-  //   doSome();
-  // } catch (e) {
-  //   console.log("Oh Oh,..");
-  // } finally {
-  //   console.log("Finally");
-  // }
-  // function doSome() {
-  //   throw RangeError()
-  // }
+    // }
 
-  //
+    // checkVal("Hello");
+    // checkVal(7);
 
-  
-  // function checkVal(val) {
-  //   try {
-  //     if (isNaN(val)) {
-  //       console.error("Not a Number");
-  //     } else {
-  //       console.log("Go to Number");
-  //     }
-  //   } catch (e) {
-  //     console.log(e);
-  //   } finally {
-  //     console.log("Finally");
-  //   }
-  //   return val;
-
-  // }
-
-  // checkVal("Hello");
-  // checkVal(7);
-
-
-//     ***************       Local Storage      *****************
+    //     ***************       Local Storage      *****************
 
     // let message = "Hello Storage";
     // localStorage.setItem("greet", message);
@@ -2645,7 +2664,6 @@ method="get">
     //   tasks = [];
     // }
 
-
     //
 
     // const object = {
@@ -2665,18 +2683,18 @@ method="get">
     // }
     // loopObj()
 
-      // let str = "{\"name\": \"Awais\", \"age\": \"21\"}";
-      // let obj = JSON.parse(str);
-      // console.log(obj.name, "is", obj.age);
-      // console.log(str);
+    // let str = "{\"name\": \"Awais\", \"age\": \"21\"}";
+    // let obj = JSON.parse(str);
+    // console.log(obj.name, "is", obj.age);
+    // console.log(str);
 
-      // let toStr = JSON.stringify(object);
-      // let toParse = JSON.parse(toStr)
-      // console.log(typeof object);
-      // console.log(typeof toStr);
-      // console.log(toStr);
-      // console.log(typeof toParse);
-      // console.log(toParse);
+    // let toStr = JSON.stringify(object);
+    // let toParse = JSON.parse(toStr)
+    // console.log(typeof object);
+    // console.log(typeof toStr);
+    // console.log(toStr);
+    // console.log(typeof toParse);
+    // console.log(toParse);
 
     //   let myList = [{
     //     "name": "Awais",
@@ -2700,33 +2718,99 @@ method="get">
 
     //    **********************     Email Extract     ****************************
 
-      const text1 = document.getElementById("text1");
-      const text2 = document.getElementById("text2");
-      const btn = document.querySelector("button");
+    // const text1 = document.getElementById("text1");
+    // const text2 = document.getElementById("text2");
+    // const btn = document.querySelector("button");
 
-      btn.addEventListener("click", function() {
-        const content = text1.value;
-        const emailRegex = /[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}/g;
-        const matchedEmails = content.match(emailRegex) || [];
-        // console.log(matchedEmails);
+    // btn.addEventListener("click", function() {
+    //   const content = text1.value;
+    //   const emailRegex = /[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}/g;
+    //   const matchedEmails = content.match(emailRegex) || [];
+    //   // console.log(matchedEmails);
 
-        const uniqueEmails = [];
-        for (const email of matchedEmails) {
-          // console.log(email);
-          if (!uniqueEmails.includes(email)) {
-            uniqueEmails.push(email);
-            console.log(uniqueEmails);
-          }
-        }
+    //   const uniqueEmails = [];
+    //   for (const email of matchedEmails) {
+    //     // console.log(email);
+    //     if (!uniqueEmails.includes(email)) {
+    //       uniqueEmails.push(email);
+    //       console.log(uniqueEmails);
+    //     }
+    //   }
 
-        text2.value = uniqueEmails.join("\n");
+    //   text2.value = uniqueEmails.join("\n");
 
-      })
+    // })
+
+    //
+
+    //  *****************************     FORM VALIDATOR    ***************************
+
+    // const emailInput = document.querySelector(".email"); 
+    // const passwordInput = document.querySelector(".password"); 
+    // const nameInput = document.querySelector(".userName"); 
+    // const error = document.querySelectorAll(".error");
+    // const btn = document.querySelector(".submit");
+    // console.log(error);
+
+    // btn.addEventListener("submit", function(e) {
+    //   e.preventDefault();
+    //   const content = emailInput.value;
+    //   for(let i = 0; i < error.length; i++) {
+    //     error[i].style.classList.add("hide");
+    //     const emailRegex = /[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}/g;
+    //     const matchEmail = content.match(emailRegex) || [];
+
+    //     const respondErrors = () => {
+          
+    //     }
+    //   }
+    // })
 
 
+    ///
 
+  //      *****************       Asyncronous      *******************
 
+  // function saySomething(x) {
+  //   return new Promise(resolve => {
+  //     setTimeout(() => {
+  //       resolve("Something" + x)
+  //     }, 2000)
+  //   })
+  // }
 
+  // async function talk(x) {
+  //   console.log("Before");
+  //   const words = await saySomething(x);
+  //   console.log(words);
+  //   console.log("After");
+  // }
+
+  // talk(2);
+  // talk(3);
+  // talk(4);
+
+  //
+
+  let counter = 2;
+
+  function counterFunc(x) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        counter += 1;
+        resolve(counter, x);
+      }, 1000)
+    })
+  }
+
+  async function output(y) {
+    let value = await counterFunc(y);
+    console.log(counter, y);
+  }
+
+  for (let i = 0; i <= 10; i++) {
+    console.log(output(i))
+  }
 
 
 
