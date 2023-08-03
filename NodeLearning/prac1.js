@@ -1,5 +1,9 @@
+// const http = require("http");
 
-function log(mess){
-    console.log("Hello " + mess);
-}
-module.export = log;
+// const server = http.createServer((req, res) => {
+//     if (req.url === "/") {
+//         res.write("Request Recieved!");
+//     }
+// });
+
+// server.listen(3000)

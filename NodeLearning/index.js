@@ -1,32 +1,22 @@
-const http = require("http");
+const express = require("express");
+//?   Humari saari App iss " app " variable ma hy
+const app = express();
 
-const server = http.createServer((req, res) => {
-    if (req.url === "/") {
-        res.write("Hello Awais, Welcome to Node World!");
-        res.end();
-    } else if (req.url === "/form") {
-        res.setHeader("Content-Type", "text/html");
-        res.write("<form action='/submit' method='POST'><input name='data' /> <button>Submit</button></form>");
-        res.end();
-    } else if (req.url === "/submit"){
+//*   Main work of Middleware is to act as MIDDLE WARE
+//?     Middleware Function
+//?     Middleware is like different Departments in Company
+//! 1. Department
+app.use((req, res, next) => {
+    // console.log(req.url);
+    req.data = "Awais";
+    next();
+    //?     "next()" agly department(function) ko call kr de ga 
+})
 
-        //*  Now we have received data in user's input data in "req" from ABOVE block
-        //*  we can use here that input data
+//! 2. Department
+app.use((req, res, next) => {
+    // res.send(req.url);
+    res.send(req.data);
+})
 
-        //? In Node we receive data(input) in chunks we've to use it clearly
-        let data = "";
-
-        //?  Whenever data will be received "req.on()" will be called 
-        req.on("data", chunk => data += chunk);
-
-        req.write("Data Received");
-        res.end();
-
-    } 
-    else {
-        res.write("404 - Not Found");
-        res.end();
-    }
-});
-
-server.listen(3000)
+app.listen(3000);
