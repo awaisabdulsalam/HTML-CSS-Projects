@@ -1,6 +1,7 @@
 const express = require("express");
 //?   Humari saari App iss " app " variable ma hy
 const app = express();
+const form = require("./routes/form")
 
 //*   Main work of Middleware is to act as MIDDLE WARE
 //?     Middleware Function
@@ -14,9 +15,11 @@ app.use((req, res, next) => {
 })
 
 //! 2. Department
-app.use((req, res, next) => {
+// app.use((req, res, next) => {
     // res.send(req.url);
-    res.send(req.data);
-})
+    // res.send(req.data);
+// })
+
+app.use("/form", form)
 
 app.listen(3000);
