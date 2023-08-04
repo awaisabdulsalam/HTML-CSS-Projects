@@ -1,7 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const form = require("./routes/form");
 const path = require("path");
+const form = require("./routes/form");
+const todo = require("./routes/todo");
 
 //?   Humari saari App iss " app " variable ma hy
 const app = express();
@@ -23,9 +24,9 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(process.cwd(), "public")))
 
 //?     Konsa Engine
-app.use("view engine", "ejs");
+app.set("view engine", "ejs");
 //?     Konsa folder (Views k liye)
-app.use("views", "views");
+app.set("views", "views");
 
 //! 3. Department
 //?     Middleware Function
@@ -44,4 +45,5 @@ app.use((req, res, next) => {        //?  Auth Middleware
 
 //! 4. Department
 app.use("/form", form);
+app.use("/todo", todo);
 app.listen(3000);
