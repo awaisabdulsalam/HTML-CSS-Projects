@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const { getAllTodos, addTodo } = require("../controllers/todo");
+const { getAllTodos, addTodo, markAsDone } = require("../controllers/todo");
 
 const router = express.Router();
 
@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
 
 router.post("/add", (req, res) => {
     addTodo(req.body.data);
-    res.send("Todo Added")
+    res.send(req.body.data)
 })
 
 module.exports = router;
