@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const form = require("./routes/form");
 const todo = require("./routes/todo");
+const auth = require("./routes/auth");
 
 //?   Humari saari App iss " app " variable ma hy
 const app = express();
@@ -44,6 +45,7 @@ app.use((req, res, next) => {        //?  Auth Middleware
 // })
 
 //! 4. Department
+app.use("/auth", auth);
 app.use("/form", form);
 app.use("/todo", todo);
 app.listen(3000);
