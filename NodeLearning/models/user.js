@@ -1,11 +1,14 @@
 const fs = require("fs");
 const path = require("path");
+const bcrypt = require("bcrypt");
 
 const jsonFilePath = path.join(process.cwd(), "data", "users.json");
 
 const readData = () => {
+
   //?  readFile ma callback hy iss liye jb is ko createUser ma call krein gy
   //?  tuo thora time lagy ga data get krne ma iss liye Promise use krte hain
+
   return new Promise((resolve, reject) => {
     fs.readFile(jsonFilePath, (err, data) => {
         if (err) {
@@ -23,7 +26,7 @@ const writeData = (data) => {
   return new Promise((resolve, reject) => {
     fs.writeFile(jsonFilePath, JSON.stringify(data), (err) => {
       if (err) {
-        reject(err);
+        return reject(err);
       }
       resolve();
     });
@@ -35,23 +38,23 @@ const writeData = (data) => {
 exports.createUser = async (email, password, userId) => {
   try {
     const users = await readData();
-    const matched = users.find((user) => user.email === email);
-    if (matched) {
-      throw new Error("User already exist");
+    const matched = users.find(user => user.email === email);
+    if (!!matched) {
+      return "User already exist";
     } else {
-      writeData([...users, { email, password, userId }]);
+        // const encPassword = await bcrypt.hash(password, 12);
+        await writeData([...users, { email, password, userId }]);
+        return "User Successfully Created";
     }
   } catch (err) {
     throw err;
   }
 };
 
-
-
 exports.findUser = async (email) => {
   try {
     const users = await readData();
-    const matched = users.find((user) => user.email === email);
+    const matched = users.find(user => user.email === email);
     return matched;
   } catch (err) {
     throw err;

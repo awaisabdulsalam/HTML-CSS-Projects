@@ -1,9 +1,13 @@
-const { createUser, findUser } = require("../models/user")
+const bcrypt = require("bcrypt");
+var jwt = require("jsonwebtoken");
+const { createUser, findUser } = require("../models/user");
+const { SECRET_KEY } = require("../data/key");
 
-exports.createUser = (email, password) => {
+exports.createUser = async (email, password) => {
     try {
         const userId = Date.now();
-        createUser(email, password, userId);
+        const encPassword = await bcrypt.hash(password, 12);
+        return await createUser(email, encPassword, userId);
     } catch (err) {
         throw err;
     }
@@ -12,8 +16,13 @@ exports.createUser = (email, password) => {
 exports.login = async (email, password) => {
     try {
         const user = await findUser(email);
-        if (!!user && user.password === password) {
-            return "Login Successfully";
+        const result = await bcrypt.compare(password, !!user && user.password);
+        //! Before
+        // if (!!user && user.password === password) {
+        //! After
+        if (result) { 
+            var token = jwt.sign({ email }, SECRET_KEY, { expiresIn: '1hr' });
+            return { token };
         } 
         return "Incorrect Email or Password";
     } catch (err) {
