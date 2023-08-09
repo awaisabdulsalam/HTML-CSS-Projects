@@ -4,10 +4,12 @@ const app = express();
 
 const secretKey = "secretkey";
 
-app.get("/", (req, res) => {
-    res.json({
-        message: "A sample API"
-    })
+app.get("/user/:userid", (req, res) => {
+    // res.json({
+    //     message: "A sample API"
+    // })
+    const id = parseInt(req.params.userid);
+    res.send(id);
 });
 
 app.post("/login", (req, res) => {
