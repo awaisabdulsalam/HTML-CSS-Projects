@@ -4,12 +4,17 @@ const app = express();
 
 const secretKey = "secretkey";
 
-app.get("/user/:userid", (req, res) => {
-    // res.json({
-    //     message: "A sample API"
-    // })
-    const id = parseInt(req.params.userid);
-    res.send(id);
+app.get("/random/:min/:max", (req, res) => {
+    let min = parseInt(req.params.min);
+    let max = parseInt(req.params.max);
+    if (isNaN(min) || isNaN(max)) {
+        res.status(400);
+        res.json({ error: "Bad request" });
+        return;
+    }
+
+    let result = Math.round((Math.random() * (max - min)) + min);
+    res.json({ result: result });
 });
 
 app.post("/login", (req, res) => {
