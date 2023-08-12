@@ -51,13 +51,13 @@ exports.createUser = async (email, password, userId) => {
   }
 };
 
+
 exports.findUser = async (email) => {
   try {
     const users = await readData();
-    const matched = users.find(user => user.email === email);
+    const matched = users.find((user) => user.email === email);
     return matched;
   } catch (err) {
     throw err;
   }
 };
-
