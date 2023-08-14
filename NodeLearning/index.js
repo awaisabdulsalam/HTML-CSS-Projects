@@ -4,6 +4,7 @@ const path = require("path");
 const form = require("./routes/form");
 const todo = require("./routes/todo");
 const auth = require("./routes/auth");
+const product = require("./routes/products");
 
 //?   Humari saari App iss " app " variable ma hy
 const app = express();
@@ -48,4 +49,5 @@ app.use((req, res, next) => {        //?  Auth Middleware
 app.use("/auth", auth);
 app.use("/form", form);
 app.use("/todo", todo);
+app.use("/product", product);
 app.listen(3000);
