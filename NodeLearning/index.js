@@ -6,6 +6,7 @@ const todo = require("./routes/todo");
 const auth = require("./routes/auth");
 const products = require("./routes/products");
 const persons = require("./routes/persons");
+const students = require("./routes/students")
 const mongoose = require("./models/connection");
 
 //?   Humari saari App iss " app " variable ma hy
@@ -53,5 +54,6 @@ app.use("/form", form);
 app.use("/todo", todo);
 app.use("/products", products);
 app.use("/persons", persons);
+app.use("/students", students);
 
 app.listen(3000);
