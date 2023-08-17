@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
-mongoose.connect("mongodb://127.0.0.1:27017/nodeleaning");
+// const mongoose = require("mongoose");
+// mongoose.connect("mongodb://127.0.0.1:27017/nodeleaning");
 
-module.exports = mongoose;
+// module.exports = mongoose;

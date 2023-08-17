@@ -4,8 +4,21 @@ const productSchema = new mongoose.Schema({
     title: String,
     price: Number
 });
+const userSchema = new mongoose.Schema({ 
+    name: String,
+    postedBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Product"
+    }
+})
 
 const Product = mongoose.model("Product", productSchema);
+const User = mongoose.model("User", userSchema);
+const pop =  async () => {
+    const found = await User.find().populate("postedBy")
+    console.log(found);
+}
+pop()
 
 
 //?   ************       Aggregate        *************
