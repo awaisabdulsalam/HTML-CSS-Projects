@@ -6,7 +6,8 @@ const todo = require("./routes/todo");
 const auth = require("./routes/auth");
 const products = require("./routes/products");
 const persons = require("./routes/persons");
-const students = require("./routes/students")
+const students = require("./routes/students");
+const relation = require("./routes/relation");
 const mongoose = require("./models/connection");
 
 //?   Humari saari App iss " app " variable ma hy
@@ -49,11 +50,13 @@ app.use((req, res, next) => {        //?  Auth Middleware
 // })
 
 //! 4. Department
+
 app.use("/auth", auth);
 app.use("/form", form);
 app.use("/todo", todo);
 app.use("/products", products);
 app.use("/persons", persons);
 app.use("/students", students);
+app.use("/relation", relation);
 
-app.listen(3000);
+// app.listen(3000);
