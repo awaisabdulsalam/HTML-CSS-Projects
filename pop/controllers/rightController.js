@@ -13,9 +13,11 @@ module.exports = {
     staffByRight: async (req, res) => {
 
         const rightData = await Right.find({ _id: req.body.right_id }).populate(
+//?       pass field we want to populate data Staff 
           "staff_id"
         );
 
         res.send(rightData);
     }
 }
+
