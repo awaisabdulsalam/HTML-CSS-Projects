@@ -7,6 +7,7 @@ const {
   } = require("../controllers/userController");
 const validateToken = require("../middleware/validateContactHandler");
 
+
 router.post("/register", registerUser);
 
 router.post("/login", loginUser);
